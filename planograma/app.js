@@ -24,6 +24,9 @@
     search: document.getElementById("search"),
     storeLabel: document.getElementById("storeLabel"),
     navButtons: [...document.querySelectorAll("[data-nav]")],
+    helpModal: document.getElementById("helpModal"),
+    btnHelp: document.getElementById("btnHelp"),
+    btnCloseHelp: document.getElementById("btnCloseHelp"),
   };
 
   const typeOrder = ["GO", "GB", "BR", "BP", "GC"];
@@ -477,6 +480,20 @@
     renderDetail(g || null);
   }
 
+  function openHelp() {
+    if (!els.helpModal) return;
+    els.helpModal.hidden = false;
+    document.body.classList.add("help-open");
+    (els.btnCloseHelp || els.helpModal).focus();
+  }
+
+  function closeHelp() {
+    if (!els.helpModal) return;
+    els.helpModal.hidden = true;
+    document.body.classList.remove("help-open");
+    if (els.btnHelp) els.btnHelp.focus();
+  }
+
   // Events
   els.filterTipo.addEventListener("change", (e) => {
     state.filterTipo = e.target.value;
@@ -503,6 +520,20 @@
       const target = document.getElementById(map[view] || "section-planta");
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  });
+
+  if (els.btnHelp) els.btnHelp.addEventListener("click", openHelp);
+  if (els.btnCloseHelp) els.btnCloseHelp.addEventListener("click", closeHelp);
+  if (els.helpModal) {
+    els.helpModal.addEventListener("click", (e) => {
+      if (e.target === els.helpModal) closeHelp();
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && els.helpModal && !els.helpModal.hidden) {
+      e.preventDefault();
+      closeHelp();
+    }
   });
 
   renderAll();

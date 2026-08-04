@@ -30,7 +30,7 @@
                                                                                "tamanho":  "1,00x0,35"
                                                                            },
                                                                            {
-                                                                               "qtd":  10,
+                                                                               "qtd":  12,
                                                                                "tamanho":  "1,00x0,40"
                                                                            },
                                                                            {
@@ -110,11 +110,11 @@
                                                                            ]
                                                        },
                                         "barras130":  36,
-                                        "m100x40":  10,
+                                        "m100x40":  12,
                                         "m13x40":  136,
                                         "cestos":  15,
                                         "m13x35":  14,
-                                        "modulos":  160,
+                                        "modulos":  162,
                                         "aparadores":  371,
                                         "prateleiras":  822,
                                         "m100x35":  0,
@@ -137,7 +137,7 @@
                                       "grupo":  "Módulos"
                                   },
                                   {
-                                      "qtd":  10,
+                                      "qtd":  12,
                                       "unidade":  "un",
                                       "peca":  "Módulo",
                                       "tamanho":  "1,00 × 0,40 m",
