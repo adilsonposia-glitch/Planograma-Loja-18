@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planograma Loja 18 — Santa Cruz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="material-symbols-outlined">storefront</span>
+      <span>Planogram Analytics</span>
+    </div>
+    <nav class="nav">
+      <button class="active" data-nav="resumo"><span class="material-symbols-outlined">dashboard</span> Visão Geral</button>
+      <button data-nav="planta"><span class="material-symbols-outlined">map</span> Planta Baixa</button>
+      <button data-nav="gondolas"><span class="material-symbols-outlined">shelves</span> Gôndolas</button>
+      <button data-nav="detalhe"><span class="material-symbols-outlined">view_module</span> Detalhe</button>
+      <button data-nav="pecas"><span class="material-symbols-outlined">inventory_2</span> Peças</button>
+    </nav>
+    <div class="sidebar-foot">
+      FONTE: CORTE LOJA 18<br />
+      REF: PLANOGRAM ANALYTICS
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1>Análise de Planograma</h1>
+        <div id="storeLabel" style="font-size:12px;color:var(--on-variant);margin-top:2px"></div>
+      </div>
+      <div class="filters">
+        <select id="filterTipo" aria-label="Filtrar tipo">
+          <option value="ALL">Todos os equipamentos</option>
+          <option value="GO">GO — Mercearia</option>
+          <option value="GB">GB — Perfumaria</option>
+          <option value="BR">BR — Bebidas</option>
+          <option value="BP">BP — Pães</option>
+          <option value="GC">GC — Expositor</option>
+        </select>
+        <input id="search" type="search" placeholder="Buscar gôndola, categoria…" />
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="section-kpis" class="view-panel">
+        <div class="kpi-row" id="kpis"></div>
+        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
+        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
+      </section>
+
+      <section id="section-pecas" class="view-panel">
+        <div class="section-title">
+          <h2>Totalizador por Peça e Tamanho</h2>
+          <div class="legend">
+            <span>Fonte: linha totalizadora Corte Loja 18</span>
+          </div>
+        </div>
+        <div class="pecas-board" id="pecasBoard"></div>
+        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
+        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
+      </section>
+
+      <section id="section-planta" class="board view-panel">
+        <div>
+          <div class="section-title">
+            <h2>Planta Baixa Interativa</h2>
+            <div class="legend">
+              <span><i class="dot go"></i> GO</span>
+              <span><i class="dot gb"></i> GB</span>
+              <span><i class="dot br"></i> BR</span>
+              <span><i class="dot bp"></i> BP</span>
+              <span><i class="dot warn"></i> BOM parcial</span>
+            </div>
+          </div>
+          <div class="floor-map glass" id="floorMap"></div>
+        </div>
+        <div>
+          <div class="section-title">
+            <h2>Resumo por Equipamento</h2>
+          </div>
+          <div class="cat-list" id="catList"></div>
+        </div>
+        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
+        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
+      </section>
+
+      <section id="section-gondolas" class="view-panel">
+        <div class="section-title">
+          <h2>Visão Panorâmica Gôndola a Gôndola</h2>
+          <div class="legend">
+            <span><i class="dot ok"></i> Corte completo</span>
+            <span><i class="dot warn"></i> Sem prateleiras no BOM</span>
+          </div>
+        </div>
+        <div class="gondola-grid" id="gondolaGrid"></div>
+        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
+        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
+      </section>
+
+      <section class="detail view-panel" id="detail">
+        <div class="section-title">
+          <h2>Detalhe do Equipamento</h2>
+          <div class="legend">
+            <span>Face A/B · módulos · prateleiras · braços</span>
+          </div>
+        </div>
+        <div id="detailBody"></div>
+        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
+        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
+      </section>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

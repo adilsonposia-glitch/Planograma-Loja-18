@@ -1,0 +1,70 @@
+﻿SUPERMARKET SANTA CRUZ - 1º PAVIMENTO | GÔNDOLAS E EQUIPAMENTOS DA ÁREA DE VENDAS x MERCADOLÓGICO PROPOSTO;;;;;;;
+Nº;Setor / Área;Endereço;Tp Mobiliário ;Especificação ;Categoria(s) Mercadológica(s) Proposta(s);Linear na planta (m);Observações
+1;MERCEARIA;;;Gôndola dupla face - Linha 01;Conservas / Molhos / Pescados-Sopas / Temperos-Vinagre / Vegetais;;Faixa de gôndolas centrais (404,76 m no total)
+2;MERCEARIA;;;Gôndola dupla face - Linha 01 (verso);Óleos & Azeites  |  Massas;;Módulo dividido em 2 categorias
+3;MERCEARIA;;;Gôndola dupla face - Linha 02;Café Especial / Premium Cápsulas;11,46 m;
+4;MERCEARIA;;;Gôndola dupla face - Linha 02 (verso);Chá;;
+5;MERCEARIA;;;Gôndola dupla face - Linha 03;Café Vácuo / Almofada;;
+6;MERCEARIA;;;Gôndola dupla face - Linha 03 (verso);Torradas & Geleias;;
+7;MERCEARIA;;;Gôndola dupla face - Linha 04;Grãos / Amendoim / Canjica / Cevada / Curau / Cuscuz / Tapioca & Cereal Matinal;;
+8;MERCEARIA;;;Gôndola dupla face - Linha 05;Açúcar / Amidos / Mingau / Alimento Infantil;;
+9;MERCEARIA;;;Gôndola dupla face - Linha 06;Creme de Leite / Leite Condensado / Chantilly / Derivados de Coco;11,46 m;
+10;MERCEARIA;;;Gôndola dupla face - Linha 06 (verso);Chocolates & Guloseimas;;
+11;MERCEARIA;;;Gôndola dupla face - Linha 07;Biscoito Doce + Champagne;12,03 m;
+12;MERCEARIA;;;Gôndola dupla face - Linha 07 (verso);Biscoito Doce c/ Cobertura;;
+13;MERCEARIA;;;Gôndola dupla face - Linha 08;Biscoito Salgado;;Junto à projeção da caixa da escada rolante da loja âncora
+14;MERCEARIA;;;Gôndola dupla face - Linha 09;Batatas Chips / Batatas Palha / Salgadinho de Batata  |  Aperitivos / Snacks;;Módulo dividido em 2 categorias
+15;LEITE / LATICÍNIOS UHT;;;Gôndola vertical (encosto);Leites UHT;2,26 m;Junto à área de padaria
+16;LEITE / LATICÍNIOS UHT;;;Gôndola vertical (encosto);Bebida Láctea UHT Chocolate / Especial / Sabores;12,86 m;
+17;PADARIA / PÃES;;;Ilhas de gôndola (x2);Pães / Bolos;39,67 m;Gôndolas de pães - total das ilhas
+18;PADARIA / PÃES;;;Balcão quente baixo fechado;Atend. Padaria - produtos quentes;2,50 m;Balcão quente de padaria
+19;PADARIA / PÃES;;;Balcão frio baixo/aberto fechado;Atend. Padaria - frios / Tortas;5,00 m;2,50 m balcão frio + 2,50 m tortas
+20;BEBIDAS;;;Gôndola/Rack dupla face;Cervejas Especiais;9,16 m;
+21;BEBIDAS;;;Gôndola/Rack dupla face (verso);Bebidas Vegetais;9,16 m;
+22;BEBIDAS;;;Gôndola/Rack dupla face;Destilados;;Lado esquerdo do corredor de bebidas
+23;BEBIDAS;;;Gôndola/Rack dupla face (verso);Alcoólicos;;
+24;BEBIDAS;;;Gôndola/Rack dupla face;Chás Isotônicos / Bebidas Mistas;;Lado direito do corredor de bebidas
+25;BEBIDAS;;;Gôndola/Rack dupla face (verso);Energéticos e Linha Zero Álcool;;
+26;BEBIDAS;;;Gôndola/Rack dupla face;Drinks & Aperitivos;;
+27;BEBIDAS;;;Gôndola/Rack dupla face (verso);Águas - Coco / Aromatizadas / Mineral;;
+28;BEBIDAS;;;Gôndola/Rack dupla face;Vinhos Tintos / Brancos / Espumantes;24,69 m;Inclui área de Adega (19,47 m da tabela)
+29;BEBIDAS;;;Gôndola/Rack dupla face (verso);Refrigerantes;;
+30;BEBIDAS;;;Gôndola amarela (ponta);Ovos;4,00 m;Próximo às geladeiras / fundo do salão
+31;HORTIFRUTI;;;Banca expositora;Frutas Frescas / Granel / Cítricos;;Bancas de hortifruti (34,94 m no total)
+32;HORTIFRUTI;;;Banca expositora;Batata Lavada / Cebola;;
+33;HORTIFRUTI;;;Banca expositora;Legumes Comum;;
+34;HORTIFRUTI;;;Banca expositora;Verduras Comum / Hidropônicas / Orgânicas / Processadas;;
+35;HORTIFRUTI;;;Banca expositora;Frutas Frescas / Frutas Orgânicas / Coco / Melancia (a pedaço);;
+36;HORTIFRUTI;;;Gôndola baixa vertical;Frutas Secas / Cristalizadas;;Gôndola baixa
+37;HORTIFRUTI;;;Balcão alto aberto resfriado (x2);Água de Coco / Néctar  |  Embalados - Legumes Processados;;Etiquetas rotacionadas, junto à parede de fundo
+38;HORTIFRUTI;;;Equipamento de apoio;Extrator de Sucos / Balança;;Equipamentos de apoio ao setor
+39;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Bazar Churrasco;;Gôndolas de parede - 18,89 m no total
+40;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Bazar Geral  |  Festas;;Módulo dividido em 2 categorias
+41;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Pet;;
+42;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Limpeza Pesada / Banheiro;;
+43;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Limpeza Cozinha / Papel Toalha;;
+44;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Perfumaria - Higiene Oral e Corporal;;
+45;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Perfumaria - Linha Capilar;;
+46;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Perfumaria - Higiene Íntima / Fraldas / Farmácia / Depilação;;
+47;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola de parede (encosto);Descartáveis / Papel Higiênico;;
+48;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Ponta de gôndola;Adoçante Culinário / Adoçante em Pó / Adoçante Líquido;;"Etiquetas ""OVOS"" próximas aparecem rasuradas/excluídas"
+49;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Ponta de gôndola;Mel / Melados / Derivados;;
+50;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Ponta de gôndola;Diets / Suplemento Alimentar;;
+51;BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO;;;Gôndola - Empório;Especiarias (Auto Serviço);;"Identificado como ""Empório"" na planta"
+52;FRIOS / LATICÍNIOS / CONGELADOS (equip. refrigerados);;;Balcão alto fechado de parede (5 módulos);Laticínios;11,31 m;Tabela: Balcões altos resfriados de laticínios de parede = 11,37 m
+53;FRIOS / LATICÍNIOS / CONGELADOS (equip. refrigerados);;;Ilhas de congelados com cabeceiras;Congelados (diversas categorias);100,90 m;Conjunto de ilhas no centro/fundo do salão
+54;FRIOS / LATICÍNIOS / CONGELADOS (equip. refrigerados);;;Balcão alto resfriado de parede;Carnes (Carnes Alto Fechado);7,50 m;Próximo à sala de Carne Moída
+55;FRIOS / LATICÍNIOS / CONGELADOS (equip. refrigerados);;;Gôndola/Balcão;Churrasco;1,90 m;Junto ao balcão de carnes
+56;FRIOS / LATICÍNIOS / CONGELADOS (equip. refrigerados);;;Geladeiras autônomas (15 un.);Bebidas/Frios (diversos);;Conjunto de 15 geladeiras junto à parede de fundo, próx. ao checkout
+57;AÇOUGUE / ATENDIMENTO;;;Balcão alto de atendimento;Atend. Carnes;2,50 m;Área do balcão = 14,26 m²
+58;AÇOUGUE / ATENDIMENTO;;;Balcão baixo de atendimento;Atend. Laticínios / Frios;5,00 m;
+59;AÇOUGUE / ATENDIMENTO;;;Balcão resfriado p/ produtos orgânicos;Orgânicos;3,75 m;
+60;AÇOUGUE / ATENDIMENTO;;;Balcão resfriado alto;Resfriados (geral);2,50 m;
+61;AÇOUGUE / ATENDIMENTO;;;Ilhas de queijo refrigeradas;Queijos;11,30 m;
+62;SALGADOS;;;Banca de salgados;Salgados;5,52 m;Área de cor lilás/roxa, próxima ao açougue
+63;PROMOÇÃO;;;Banca de promoção;Promoção (mix variável);8,00 m;Banca de promoção - tabela linear
+64;PROMOÇÃO;;;Mobiliário de promoção (módulos);Promoção (mix variável);;Módulos inseridos no corredor central (Revisão 04), ~4 unidades visíveis
+65;FRENTE DE LOJA / CHECK-OUT;;;Checkouts;Frente de caixa (1.887,04 m² - Salão de Vendas e Checkouts);;Inclui fiscal de caixa (2 postos) e caixas eletrônicos
+66;FRENTE DE LOJA / CHECK-OUT;;;Self checkout;Frente de caixa - autoatendimento;;Equipamento incluído conforme Revisão 07 (21/04/2026)
+;;;;;;;
+"Fonte: extraído e interpretado a partir da planta ""1º Pavto - Planograma"" (PGR01/09, Supermarket Santa Cruz). Linear (m) indicado apenas onde a planta traz a cota junto à etiqueta mercadológica; demais linhas seguem o agrupamento de cada gôndola/equipamento sem cota individual destacada na planta. Valores totais por tipo de equipamento estão na aba 'Linear de Balcões (Resumo)'.";;;;;;;

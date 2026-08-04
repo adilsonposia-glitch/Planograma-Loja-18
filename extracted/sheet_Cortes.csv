@@ -1,0 +1,29 @@
+﻿;;;;;;;;;;
+;Godolas ;;Prateleiras;Braços ;Gancheiras;Ganchos;vassoura;Aparadores;Cestos ;OBS
+RACK;PA  E;;48;96;;;;;;RACK  PAREDÃO 8 MODULOS
+RACK;GD 1;D;50;100;;;;32;;3 MODULO B +5     E   4 MODULO B  +7  COM APARADOR
+;;E;43;86;;;;;;6 MÓDULOS  BE +5  1  MODULO B MAIS 7
+RACK;GD 2;D;32;64;;;;;;5 MODUILOS  B +4  2 MODULOS B + 6
+;;E;51;102;;;;;;5 MODULOS B +5  2 MODULOS B +6
+RACK;GD 3;D;41;82;;;;;;5 MODULOS  B +4  2  MODULOS  B +8
+;;E;33;66;6;60;2;21;7;2 Mod B +2     1 Mof B +3     4 MOD B +6
+;GD 4;D;43;86;5;50;;20;;2 MÓD B +5   4 MOD B +6   1 MOD B + 3 
+;;E;46;92;;;;5;;7 MOD  B+6
+;GD 5;D;47;94;;;;6;;5 MOD  B+ 6    2 MOD  B+7
+;;E;49;98;;;;;; 5 MOD B+6       2 MOD B+5 
+;GD 6;D;48;96;;;;8;5;5 MOD B + 5   2 MOD B +8
+;;E;36;72;;;;12;;5 MOD B +3      1 MOD B +6      1  MOD B+8
+;GD 7;D;51;102;;;;40;;1 MOD B +5      3 MOD B +5     2 MOD B +8
+GD 30 CM;;E;56;112;9;90;;;;7 MOD  B + 7
+GD 30 CM;GD 8;D;50;100;;;;12;6;5 MOD B+7      2 MOD  B + 4
+;;E;45;90;;;;30;;3 MOD  B +6    4  MOD  B +5
+;GD 9;D;49;98;;;;20;;7 MOD  B + 6
+;;E;49;98;;;;50;;7 MOD  B + 6
+;GD 10;D;49;98;;;;40;;7 MOD B + 6
+;;E;56;112;;;;28;;7 MOD B + 7
+;GD 11;D;48;96;;;;15;;3 MOD B + 5      1  MOD  B +8       3  MOD  B + 6
+;;E;50;100;;;;30;;6 MOD  B + 6     1  MOD   B+ 7
+;GD 12;D;49;98;;;;30;2;7 MOD  B + 6
+;;E;49;98;;;;15;;7 MOD  B + 6
+RACK;PA D;;90;180;;;;;;15 MOD B +5       
+;TOTAIS;;1258;2516;20;200;2;414;20;

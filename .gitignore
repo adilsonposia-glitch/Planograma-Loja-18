@@ -1,0 +1,14 @@
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+~$*
+
+# WhatsApp save (não usar como logo)
+Logo ABB.html
+Logo ABB_files/
+
+# Excel locks / temp
+~$*.xlsx
+*.xlk
