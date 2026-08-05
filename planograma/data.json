@@ -12,7 +12,7 @@
                                  },
                     "pavimento":  "1º Pavimento",
                     "totalizador":  {
-                                        "bracos":  1648,
+                                        "bracos":  1766,
                                         "porTamanho":  {
                                                            "cestos":  [
                                                                           {
@@ -22,6 +22,10 @@
                                                                           {
                                                                               "qtd":  15,
                                                                               "tamanho":  "1,30m"
+                                                                          },
+                                                                          {
+                                                                              "qtd":  18,
+                                                                              "tamanho":  "vinhos"
                                                                           }
                                                                       ],
                                                            "modulos":  [
@@ -40,6 +44,10 @@
                                                                            {
                                                                                "qtd":  136,
                                                                                "tamanho":  "1,30x0,40"
+                                                                           },
+                                                                           {
+                                                                               "qtd":  46,
+                                                                               "tamanho":  "1,50x1,30"
                                                                            }
                                                                        ],
                                                            "ganchos":  [
@@ -78,6 +86,10 @@
                                                                           {
                                                                               "qtd":  1456,
                                                                               "tamanho":  "40cm"
+                                                                          },
+                                                                          {
+                                                                              "qtd":  118,
+                                                                              "tamanho":  "60cm"
                                                                           }
                                                                       ],
                                                            "barras":  [
@@ -106,17 +118,21 @@
                                                                                {
                                                                                    "qtd":  673,
                                                                                    "tamanho":  "1,30x40cm"
+                                                                               },
+                                                                               {
+                                                                                   "qtd":  59,
+                                                                                   "tamanho":  "1,30x60cm"
                                                                                }
                                                                            ]
                                                        },
                                         "barras130":  36,
                                         "m100x40":  12,
                                         "m13x40":  136,
-                                        "cestos":  15,
+                                        "cestos":  33,
                                         "m13x35":  14,
-                                        "modulos":  164,
+                                        "modulos":  210,
                                         "aparadores":  364,
-                                        "prateleiras":  822,
+                                        "prateleiras":  881,
                                         "m100x35":  2,
                                         "ganchos":  365
                                     },
@@ -158,6 +174,13 @@
                                       "grupo":  "Módulos"
                                   },
                                   {
+                                      "qtd":  46,
+                                      "unidade":  "un",
+                                      "peca":  "Módulo",
+                                      "tamanho":  "1,50 × 1,30 m",
+                                      "grupo":  "Módulos"
+                                  },
+                                  {
                                       "qtd":  2,
                                       "unidade":  "un",
                                       "peca":  "Base",
@@ -183,6 +206,20 @@
                                       "unidade":  "un",
                                       "peca":  "Base",
                                       "tamanho":  "1,30 × 0,40 m",
+                                      "grupo":  "Bases"
+                                  },
+                                  {
+                                      "qtd":  46,
+                                      "unidade":  "un",
+                                      "peca":  "Base",
+                                      "tamanho":  "0,50 m",
+                                      "grupo":  "Bases"
+                                  },
+                                  {
+                                      "qtd":  17,
+                                      "unidade":  "un",
+                                      "peca":  "Base",
+                                      "tamanho":  "0,60 m",
                                       "grupo":  "Bases"
                                   },
                                   {
@@ -214,6 +251,13 @@
                                       "grupo":  "Prateleiras"
                                   },
                                   {
+                                      "qtd":  59,
+                                      "unidade":  "un",
+                                      "peca":  "Prateleira",
+                                      "tamanho":  "1,30 m × 60 cm",
+                                      "grupo":  "Prateleiras"
+                                  },
+                                  {
                                       "qtd":  192,
                                       "unidade":  "un",
                                       "peca":  "Braço",
@@ -225,6 +269,13 @@
                                       "unidade":  "un",
                                       "peca":  "Braço",
                                       "tamanho":  "40 cm",
+                                      "grupo":  "Braços"
+                                  },
+                                  {
+                                      "qtd":  118,
+                                      "unidade":  "un",
+                                      "peca":  "Braço",
+                                      "tamanho":  "60 cm",
                                       "grupo":  "Braços"
                                   },
                                   {
@@ -295,6 +346,13 @@
                                       "unidade":  "un",
                                       "peca":  "Cesto",
                                       "tamanho":  "1,30 m",
+                                      "grupo":  "Cestos"
+                                  },
+                                  {
+                                      "qtd":  18,
+                                      "unidade":  "un",
+                                      "peca":  "Cesto",
+                                      "tamanho":  "Vinhos",
                                       "grupo":  "Cestos"
                                   }
                               ],
@@ -4554,163 +4612,163 @@
                      },
                      {
                          "tipo":  "BR",
-                         "totalPrat":  0,
+                         "totalPrat":  59,
                          "id":  "BR-05",
                          "categorias":  "CERVEJA COMUM/ ÁGUA MINERAL /REFRIGERANTE",
                          "totalMods":  17,
                          "setor":  "BEBIDAS",
-                         "totalBracos":  0,
+                         "totalBracos":  118,
                          "faces":  [
                                        {
-                                           "bracos":  0,
+                                           "bracos":  118,
                                            "id":  "BR-05",
                                            "modulos":  [
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.1",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  1,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.2",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  2,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.3",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  3,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.4",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  4,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.5",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  5,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.6",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  6,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.7",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  7,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.8",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Cerveja Comum ",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 3 prateleiras + 6 braços (com iluminação)",
                                                                "n":  8,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  6,
                                                                "id":  "BR-05.9",
                                                                "barras":  0,
                                                                "aparadores":  0,
                                                                "sintetico":  false,
                                                                "ganchos":  0,
-                                                               "niveis":  4,
+                                                               "niveis":  3,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Água MIneral",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  3,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  9,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.10",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4719,14 +4777,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Água MIneral",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  10,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.11",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4735,14 +4793,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Água MIneral",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  11,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.12",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4751,14 +4809,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  12,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.13",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4767,14 +4825,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  13,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.14",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4783,14 +4841,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  14,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.15",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4799,14 +4857,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  15,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.16",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4815,14 +4873,14 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  16,
                                                                "observacao":  ""
                                                            },
                                                            {
-                                                               "bracos":  0,
+                                                               "bracos":  8,
                                                                "id":  "BR-05.17",
                                                                "barras":  0,
                                                                "aparadores":  0,
@@ -4831,7 +4889,7 @@
                                                                "niveis":  4,
                                                                "dim":  "1,80x1,30x0,60",
                                                                "categoria":  "Refrigerantes",
-                                                               "prateleiras":  0,
+                                                               "prateleiras":  4,
                                                                "cestos":  0,
                                                                "especificacao":  "1 módulo + 1 base + 4 prateleiras + 8 braços (com iluminação)",
                                                                "n":  17,
@@ -4840,12 +4898,12 @@
                                                        ],
                                            "linear":  "1 Módulo Base +  Prateleiras (1:30m-L x 0,40cm-Prof prateleiras/ 0,50 P base x 1:50m-A)",
                                            "categoria":  "CERVEJA COMUM/ ÁGUA MINERAL /REFRIGERANTE",
-                                           "prateleiras":  0,
+                                           "prateleiras":  59,
                                            "especificacao":  "17 Módulos  ",
                                            "headerMods":  17
                                        }
                                    ],
-                         "preenchimento":  "parcial",
+                         "preenchimento":  "completo",
                          "tipoLabel":  "Rack Bebidas"
                      },
                      {

@@ -121,11 +121,18 @@ for ($i = 3; $i -lt $lines.Count; $i++) {
     if ($p[4]) { $faces[$face].spec = $p[4] }
     if ($p[6]) { $faces[$face].linear = $p[6] }
   } else {
+    # Cols 16-21 = mercearia (35/40 cm); cols 37-38 = bebidas profundas (0,60 cm) — BR-05
+    $prat = [int]((ToNum $p[16]) + (ToNum $p[17]) + (ToNum $p[18]) + (ToNum $p[19]))
+    $bracos = [int]((ToNum $p[20]) + (ToNum $p[21]))
+    if ($p.Count -gt 38) {
+      $prat += [int](ToNum $p[38])   # Prateleiras 1,30x0,60
+      $bracos += [int](ToNum $p[37]) # Braços 0,60 cm
+    }
     $faces[$face].mods += ,@( @{
       id = $end; n = [int]$modN; cat = ($p[5] + ''); spec = ($p[4] + '')
       obs = ($p[7] + ''); dim = ($p[6] + '')
-      prat = [int]((ToNum $p[16]) + (ToNum $p[17]) + (ToNum $p[18]) + (ToNum $p[19]))
-      bracos = [int]((ToNum $p[20]) + (ToNum $p[21]))
+      prat = $prat
+      bracos = $bracos
       barras = [int]((ToNum $p[22]) + (ToNum $p[23]))
       ganchos = [int]((ToNum $p[24]) + (ToNum $p[25]) + (ToNum $p[26]))
       apar = [int]((ToNum $p[27]) + (ToNum $p[28]))
@@ -242,13 +249,21 @@ $ce130   = ToInt $tr[30]
 $gvass   = 0
 if ($tr.Count -gt 31) { $gvass += ToInt $tr[31] }
 if ($tr.Count -gt 32) { $gvass += ToInt $tr[32] }
+# Colunas novas (bebidas / vinhos) — presentes no LJ01 atual
+$m150x130 = 0; $b050 = 0; $cestoVinhos = 0; $b060 = 0; $br60 = 0; $p13x60 = 0
+if ($tr.Count -gt 33) { $m150x130 = ToInt $tr[33] }
+if ($tr.Count -gt 34) { $b050 = ToInt $tr[34] }
+if ($tr.Count -gt 35) { $cestoVinhos = ToInt $tr[35] }
+if ($tr.Count -gt 36) { $b060 = ToInt $tr[36] }
+if ($tr.Count -gt 37) { $br60 = ToInt $tr[37] }
+if ($tr.Count -gt 38) { $p13x60 = ToInt $tr[38] }
 
-$modulosTot = $m100x35 + $m100x40 + $m13x35 + $m13x40
-$pratTot = $p100x35 + $p100x40 + $p13x35 + $p13x40
-$bracosTot = $br35 + $br40
+$modulosTot = $m100x35 + $m100x40 + $m13x35 + $m13x40 + $m150x130
+$pratTot = $p100x35 + $p100x40 + $p13x35 + $p13x40 + $p13x60
+$bracosTot = $br35 + $br40 + $br60
 $ganchosTot = $g4035 + $g3530 + $g3025 + $gvass
 $aparTot = $ap100 + $ap130
-$cestosTot = $ce100 + $ce130
+$cestosTot = $ce100 + $ce130 + $cestoVinhos
 
 # Fallback if official totals row empty: sum from body
 if ($modulosTot -eq 0) {
@@ -263,16 +278,21 @@ $pecas = @(
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,00 × 0,40 m'; qtd = $m100x40; unidade = 'un' }
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,30 × 0,35 m'; qtd = $m13x35; unidade = 'un' }
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,30 × 0,40 m'; qtd = $m13x40; unidade = 'un' }
+  @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,50 × 1,30 m'; qtd = $m150x130; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,00 × 0,35 m'; qtd = $b100x35; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,00 × 0,40 m'; qtd = $b100x40; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,30 × 0,35 m'; qtd = $b13x35; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,30 × 0,40 m'; qtd = $b13x40; unidade = 'un' }
+  @{ grupo = 'Bases'; peca = 'Base'; tamanho = '0,50 m'; qtd = $b050; unidade = 'un' }
+  @{ grupo = 'Bases'; peca = 'Base'; tamanho = '0,60 m'; qtd = $b060; unidade = 'un' }
   @{ grupo = 'Prateleiras'; peca = 'Prateleira'; tamanho = '1,00 m × 35 cm'; qtd = $p100x35; unidade = 'un' }
   @{ grupo = 'Prateleiras'; peca = 'Prateleira'; tamanho = '1,00 m × 40 cm'; qtd = $p100x40; unidade = 'un' }
   @{ grupo = 'Prateleiras'; peca = 'Prateleira'; tamanho = '1,30 m × 35 cm'; qtd = $p13x35; unidade = 'un' }
   @{ grupo = 'Prateleiras'; peca = 'Prateleira'; tamanho = '1,30 m × 40 cm'; qtd = $p13x40; unidade = 'un' }
+  @{ grupo = 'Prateleiras'; peca = 'Prateleira'; tamanho = '1,30 m × 60 cm'; qtd = $p13x60; unidade = 'un' }
   @{ grupo = 'Braços'; peca = 'Braço'; tamanho = '35 cm'; qtd = $br35; unidade = 'un' }
   @{ grupo = 'Braços'; peca = 'Braço'; tamanho = '40 cm'; qtd = $br40; unidade = 'un' }
+  @{ grupo = 'Braços'; peca = 'Braço'; tamanho = '60 cm'; qtd = $br60; unidade = 'un' }
   @{ grupo = 'Barras'; peca = 'Barra'; tamanho = '1,00 m'; qtd = $bar100; unidade = 'un' }
   @{ grupo = 'Barras'; peca = 'Barra'; tamanho = '1,30 m'; qtd = $bar130; unidade = 'un' }
   @{ grupo = 'Ganchos'; peca = 'Gancho horizontal'; tamanho = '40 × 35 cm'; qtd = $g4035; unidade = 'un' }
@@ -283,6 +303,7 @@ $pecas = @(
   @{ grupo = 'Aparadores'; peca = 'Aparador'; tamanho = '1,30 m'; qtd = $ap130; unidade = 'un' }
   @{ grupo = 'Cestos'; peca = 'Cesto'; tamanho = '1,00 m'; qtd = $ce100; unidade = 'un' }
   @{ grupo = 'Cestos'; peca = 'Cesto'; tamanho = '1,30 m'; qtd = $ce130; unidade = 'un' }
+  @{ grupo = 'Cestos'; peca = 'Cesto'; tamanho = 'Vinhos'; qtd = $cestoVinhos; unidade = 'un' }
 )
 
 $summary = @{
@@ -304,16 +325,19 @@ $summary = @{
         @{ qtd = $m100x40; tamanho = '1,00x0,40' }
         @{ qtd = $m13x35; tamanho = '1,30x0,35' }
         @{ qtd = $m13x40; tamanho = '1,30x0,40' }
+        @{ qtd = $m150x130; tamanho = '1,50x1,30' }
       )
       prateleiras = @(
         @{ qtd = $p100x35; tamanho = '1,00x35cm' }
         @{ qtd = $p100x40; tamanho = '1,00x40cm' }
         @{ qtd = $p13x35; tamanho = '1,30x35cm' }
         @{ qtd = $p13x40; tamanho = '1,30x40cm' }
+        @{ qtd = $p13x60; tamanho = '1,30x60cm' }
       )
       bracos = @(
         @{ qtd = $br35; tamanho = '35cm' }
         @{ qtd = $br40; tamanho = '40cm' }
+        @{ qtd = $br60; tamanho = '60cm' }
       )
       barras = @(
         @{ qtd = $bar100; tamanho = '1,00m' }
@@ -332,6 +356,7 @@ $summary = @{
       cestos = @(
         @{ qtd = $ce100; tamanho = '1,00m' }
         @{ qtd = $ce130; tamanho = '1,30m' }
+        @{ qtd = $cestoVinhos; tamanho = 'vinhos' }
       )
     }
   }
