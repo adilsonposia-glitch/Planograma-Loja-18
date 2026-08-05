@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capa — Planograma Loja 18</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=JetBrains+Mono:wght@600;700&display=swap");
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 1600px;
+      height: 900px;
+      overflow: hidden;
+      font-family: "Geist", "Segoe UI", sans-serif;
+      background: #dceaf4;
+    }
+    .stage {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      background:
+        radial-gradient(900px 500px at 8% 0%, rgba(255,255,255,0.75), transparent 55%),
+        radial-gradient(700px 420px at 92% 100%, rgba(180,214,236,0.55), transparent 50%),
+        linear-gradient(165deg, #eef6fb 0%, #d7e9f5 55%, #e8f2f9 100%);
+    }
+    .logo-bo {
+      position: absolute;
+      top: 28px;
+      left: 36px;
+      height: 78px;
+      width: auto;
+      z-index: 5;
+      filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
+    }
+    .logo-abb {
+      position: absolute;
+      right: 36px;
+      bottom: 28px;
+      height: 86px;
+      width: auto;
+      z-index: 5;
+      filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
+    }
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 28px;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 4;
+    }
+    .title h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #0b4f66;
+    }
+    .title p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #4d6880;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .plan-wrap {
+      position: absolute;
+      left: 48px;
+      right: 48px;
+      top: 120px;
+      bottom: 120px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(18,60,95,0.12);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
+      overflow: hidden;
+    }
+    svg { width: 100%; height: 100%; display: block; }
+    .unit { stroke-width: 1.6; }
+    .lbl {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      fill: #123047;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .lbl-sm { font-size: 9.5px; }
+    .lbl-counter {
+      font-family: "Geist", "Segoe UI", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      fill: #0b4f66;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      letter-spacing: 0.04em;
+    }
+    .zone-hint {
+      font-family: "Geist", "Segoe UI", sans-serif;
+      font-size: 9px;
+      fill: #6a8499;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .legend {
+      position: absolute;
+      left: 48px;
+      bottom: 36px;
+      display: flex;
+      gap: 16px;
+      font-size: 11px;
+      color: #4d6880;
+      font-family: "JetBrains Mono", monospace;
+      z-index: 4;
+    }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .sw { width: 14px; height: 8px; border-radius: 2px; border: 1px solid rgba(18,60,95,0.25); }
+  </style>
+</head>
+<body>
+  <div class="stage" id="capa">
+    <img class="logo-bo" src="assets/logo-barraoeste.png" alt="Barra Oeste" />
+    <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
+
+    <div class="title">
+      <h1>PLANOGRAMA LOJA 18</h1>
+      <p>Supermarket Santa Cruz · 1º Pavimento</p>
+    </div>
+
+    <!--
+      Coordenadas alinhadas à planta 1ºPavto_Planograma (área de vendas):
+      - Balcões principais na parede ESQUERDA (Padaria / Laticínio)
+      - Ilhas IC em duas colunas no alto-esquerda (frente aos balcões)
+      - BP à esquerda, abaixo dos balcões / ao lado das ilhas
+      - GO-09 (topo) → GO-01 (base) no centro, fileiras horizontais
+      - GB à direita do bloco GO inferior
+      - BR no canto inferior esquerdo (bebidas)
+      - MH / MM no inferior centro (hortifruti / mercearia)
+      - Check-outs em coluna vertical à direita da área de vendas
+    -->
+    <div class="plan-wrap">
+      <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#123047" flood-opacity="0.08"/>
+          </filter>
+        </defs>
+
+        <!-- piso área de vendas -->
+        <rect x="20" y="20" width="860" height="580" rx="8" fill="#f4f9fc" stroke="#9db8cb" stroke-width="1.5"/>
+        <text class="zone-hint" x="40" y="40">Área de vendas · leitura da planta</text>
+
+        <!-- ===== BALCÕES PRINCIPAIS (parede esquerda / L) ===== -->
+        <!-- trecho horizontal superior (frente padaria/laticínio) -->
+        <g filter="url(#soft)">
+          <rect class="unit" x="40" y="55" width="210" height="28" rx="3" fill="#cfe6f2" stroke="#0b6f8c"/>
+          <text class="lbl-counter" x="145" y="69">BALCÃO PADARIA / LATICÍNIO</text>
+          <!-- perna vertical esquerda -->
+          <rect class="unit" x="40" y="55" width="34" height="250" rx="3" fill="#c5e0ef" stroke="#0b6f8c"/>
+          <text class="lbl-counter" x="57" y="140" transform="rotate(-90 57 140)">PADARIA</text>
+          <text class="lbl-counter" x="57" y="230" transform="rotate(-90 57 230)">ATEND. LATICÍNIO</text>
+          <!-- balcão açougue topo (à direita das ilhas, ao longo da parede norte da venda) -->
+          <rect class="unit" x="270" y="55" width="160" height="26" rx="3" fill="#cfe6f2" stroke="#0b6f8c"/>
+          <text class="lbl-counter" x="350" y="68">AÇOUGUE / ATEND.</text>
+        </g>
+
+        <!-- ===== ILHAS IC — 2 colunas (topo-esq.), ordem da planta ===== -->
+        <!-- Coluna esq: IC-08, IC-06, IC-05, IC-04 (topo→base) -->
+        <!-- Coluna dir: IC-07, IC-03, IC-02, IC-01 -->
+        <g id="ilhas">
+          <!-- col left -->
+          <rect class="unit" x="100" y="100" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="144" y="118">IC-08</text>
+          <rect class="unit" x="100" y="144" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="144" y="162">IC-06</text>
+          <rect class="unit" x="100" y="188" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="144" y="206">IC-05</text>
+          <rect class="unit" x="100" y="232" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="144" y="250">IC-04</text>
+          <!-- col right -->
+          <rect class="unit" x="198" y="100" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="242" y="118">IC-07</text>
+          <rect class="unit" x="198" y="144" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="242" y="162">IC-03</text>
+          <rect class="unit" x="198" y="188" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="242" y="206">IC-02</text>
+          <rect class="unit" x="198" y="232" width="88" height="36" rx="3" fill="#9fd4ea" stroke="#0284a8"/><text class="lbl" x="242" y="250">IC-01</text>
+        </g>
+
+        <!-- ===== BP — esquerda, abaixo das ilhas / frente padaria ===== -->
+        <g id="bp">
+          <rect class="unit" x="100" y="290" width="120" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="160" y="301">BP-01</text>
+          <rect class="unit" x="100" y="318" width="120" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="160" y="329">BP-02</text>
+          <rect class="unit" x="100" y="346" width="120" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="160" y="357">BP-03</text>
+        </g>
+
+        <!-- ===== GO — centro: GO-09 topo → GO-01 base ===== -->
+        <g id="go">
+          <rect class="unit" x="340" y="120" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="130">GO-09</text>
+          <rect class="unit" x="340" y="148" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="158">GO-08</text>
+          <rect class="unit" x="340" y="176" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="186">GO-07</text>
+          <rect class="unit" x="340" y="204" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="214">GO-06</text>
+          <rect class="unit" x="340" y="232" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="242">GO-05</text>
+          <rect class="unit" x="340" y="260" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="270">GO-04</text>
+          <rect class="unit" x="340" y="288" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="298">GO-03</text>
+          <rect class="unit" x="340" y="316" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="326">GO-02</text>
+          <rect class="unit" x="340" y="344" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="354">GO-01</text>
+        </g>
+
+        <!-- ===== GB — à direita do GO (bloco azul da planta) ===== -->
+        <g id="gb">
+          <rect x="660" y="250" width="130" height="130" rx="4" fill="none" stroke="#0284a8" stroke-width="2" stroke-dasharray="4 3"/>
+          <rect class="unit" x="674" y="262" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="273">GB-04</text>
+          <rect class="unit" x="674" y="290" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="301">GB-03</text>
+          <rect class="unit" x="674" y="318" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="329">GB-02</text>
+          <rect class="unit" x="674" y="346" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="357">GB-01</text>
+        </g>
+
+        <!-- ===== MM — entre GO e BR/MH (esquerda do GO inferior na planta) ===== -->
+        <g id="mm">
+          <rect class="unit" x="250" y="300" width="18" height="72" rx="2" fill="#fde68a" stroke="#d97706"/><text class="lbl lbl-sm" x="259" y="336" transform="rotate(-90 259 336)">MM-01</text>
+          <rect class="unit" x="274" y="300" width="18" height="72" rx="2" fill="#fde68a" stroke="#d97706"/><text class="lbl lbl-sm" x="283" y="336" transform="rotate(-90 283 336)">MM-02</text>
+          <rect class="unit" x="298" y="300" width="18" height="72" rx="2" fill="#fde68a" stroke="#d97706"/><text class="lbl lbl-sm" x="307" y="336" transform="rotate(-90 307 336)">MM-03</text>
+          <rect class="unit" x="322" y="300" width="18" height="72" rx="2" fill="#fde68a" stroke="#d97706"/><text class="lbl lbl-sm" x="331" y="336" transform="rotate(-90 331 336)">MM-04</text>
+        </g>
+
+        <!-- ===== BR — inferior esquerdo (bebidas); BR-08/09 verticais à esq. ===== -->
+        <g id="br">
+          <rect class="unit" x="40" y="430" width="18" height="90" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="49" y="475" transform="rotate(-90 49 475)">BR-09</text>
+          <rect class="unit" x="64" y="430" width="18" height="90" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="73" y="475" transform="rotate(-90 73 475)">BR-08</text>
+
+          <rect class="unit" x="96" y="400" width="200" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="409">BR-07</text>
+          <rect class="unit" x="96" y="424" width="200" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="433">BR-06</text>
+          <rect class="unit" x="96" y="448" width="260" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="226" y="457">BR-05</text>
+          <rect class="unit" x="96" y="472" width="200" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="481">BR-04</text>
+          <rect class="unit" x="96" y="496" width="200" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="505">BR-03</text>
+          <rect class="unit" x="96" y="520" width="180" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="186" y="529">BR-02</text>
+          <rect class="unit" x="96" y="544" width="180" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="186" y="553">BR-01</text>
+        </g>
+
+        <!-- ===== MH — inferior centro (hortifruti), à direita do BR ===== -->
+        <g id="mh">
+          <rect class="unit" x="380" y="400" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="408">MH-09</text>
+          <rect class="unit" x="380" y="422" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="430">MH-08</text>
+          <rect class="unit" x="380" y="444" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="452">MH-07</text>
+          <rect class="unit" x="380" y="466" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="474">MH-06</text>
+          <rect class="unit" x="380" y="488" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="496">MH-05</text>
+          <rect class="unit" x="380" y="510" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="518">MH-04</text>
+          <rect class="unit" x="380" y="532" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="540">MH-03</text>
+          <rect class="unit" x="380" y="554" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="562">MH-02</text>
+          <rect class="unit" x="380" y="576" width="220" height="16" rx="2" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="490" y="584">MH-01</text>
+        </g>
+
+        <!-- ===== CHECK-OUTS — coluna vertical à direita da venda (como na planta) ===== -->
+        <g id="checkouts">
+          <text class="zone-hint" x="830" y="70">Check-outs</text>
+          <!-- 01 no topo → 16 na base (orientação típica da planta) -->
+          <g id="co-list"></g>
+        </g>
+
+        <!-- EX-01 perto da entrada (inferior) -->
+        <rect class="unit" x="640" y="560" width="70" height="28" rx="3" fill="#fef3c7" stroke="#d97706"/>
+        <text class="lbl lbl-sm" x="675" y="574">EX-01</text>
+      </svg>
+    </div>
+
+    <div class="legend">
+      <span><i class="sw" style="background:#9fd4ea"></i>IC ilhas</span>
+      <span><i class="sw" style="background:#e7f6ee"></i>GO</span>
+      <span><i class="sw" style="background:#fce7f0"></i>BR</span>
+      <span><i class="sw" style="background:#d8f0e4"></i>BP</span>
+      <span><i class="sw" style="background:#d4eef7"></i>GB</span>
+      <span><i class="sw" style="background:#e8f7e4"></i>MH</span>
+      <span><i class="sw" style="background:#cfe6f2"></i>Balcões</span>
+    </div>
+  </div>
+  <script>
+    // Check-outs 01–16 em coluna (direita da área de vendas)
+    const g = document.getElementById("co-list");
+    for (let i = 1; i <= 16; i++) {
+      const y = 80 + (i - 1) * 30;
+      const id = String(i).padStart(2, "0");
+      g.innerHTML += `
+        <rect class="unit" x="820" y="${y}" width="48" height="22" rx="2" fill="#ecfdf5" stroke="#059669"/>
+        <text class="lbl lbl-sm" x="844" y="${y + 11}">${id}</text>`;
+    }
+  </script>
+</body>
+</html>
