@@ -3,246 +3,198 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Planograma Loja 18 — Santa Cruz</title>
+  <title>Planograma Loja 18 — Entrada</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #123047;
+      --ink-soft: #4d6880;
+      --outline: rgba(18, 60, 95, 0.14);
+      --glass: rgba(255, 255, 255, 0.92);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Geist", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 560px at 8% -5%, rgba(255, 255, 255, 0.85), transparent 55%),
+        radial-gradient(900px 520px at 96% 100%, rgba(170, 210, 235, 0.7), transparent 52%),
+        linear-gradient(165deg, #eef6fb 0%, #d5e8f4 52%, #e8f2f9 100%);
+    }
+
+    .stage {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(12px, 2vw, 24px);
+    }
+
+    .capa-frame {
+      position: relative;
+      flex: 1;
+      min-height: min(72vh, 820px);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--outline);
+      box-shadow:
+        0 18px 48px rgba(18, 48, 71, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+      background: #e8f2f8;
+      animation: rise 0.75s ease both;
+    }
+
+    .capa-frame > img.capa {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    /* Logo subida + participação no lugar da logo antiga */
+    .credit {
+      position: absolute;
+      right: clamp(12px, 2.2vw, 28px);
+      bottom: clamp(12px, 2vw, 24px);
+      z-index: 3;
+      width: min(42%, 280px);
+      text-align: center;
+      padding: 12px 14px 10px;
+      background: var(--glass);
+      border: 1px solid var(--outline);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(18, 48, 71, 0.1);
+      animation: rise 0.85s 0.12s ease both;
+    }
+
+    .credit .logo-abb {
+      display: block;
+      height: clamp(64px, 8vw, 88px);
+      width: auto;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 2px 8px rgba(18, 48, 71, 0.12));
+    }
+
+    .credit .participacao {
+      margin: 0;
+      padding-top: 10px;
+      border-top: 1px solid var(--outline);
+      font-size: clamp(12px, 1.2vw, 13px);
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .credit .participacao strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .dock {
+      margin-top: clamp(14px, 2vw, 20px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      animation: rise 0.9s 0.18s ease both;
+    }
+
+    .welcome {
+      flex: 1 1 280px;
+      max-width: 46rem;
+      margin: 0;
+      font-size: clamp(14px, 1.5vw, 17px);
+      line-height: 1.55;
+    }
+
+    .btn-entrada {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-width: 168px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(165deg, #0b6f8c 0%, #0284a8 100%);
+      color: #fff;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(2, 132, 168, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-entrada:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(2, 132, 168, 0.36);
+      filter: brightness(1.05);
+    }
+
+    .btn-entrada:active { transform: translateY(0); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      .capa-frame { min-height: 52vh; }
+
+      .credit {
+        width: min(72%, 240px);
+      }
+
+      .dock {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-entrada { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand">
-      <span class="material-symbols-outlined">storefront</span>
-      <span>Planogram Analytics</span>
+  <div class="stage">
+    <div class="capa-frame" aria-label="Capa Planograma Loja 18">
+      <img
+        class="capa"
+        src="assets/capa-planograma-loja-18.png"
+        alt="Planograma Loja 18 — Supermarket Santa Cruz, 1º pavimento"
+      />
+
+      <aside class="credit">
+        <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista — inteligência de negócio" />
+        <p class="participacao">
+          <strong>Participação</strong>
+          Tatiana Batista e Jefferson Portilho
+        </p>
+      </aside>
     </div>
-    <nav class="nav">
-      <button class="active" data-nav="resumo"><span class="material-symbols-outlined">dashboard</span> Visão Geral</button>
-      <button data-nav="planta"><span class="material-symbols-outlined">map</span> Planta Baixa</button>
-      <button data-nav="gondolas"><span class="material-symbols-outlined">shelves</span> Gôndolas</button>
-      <button data-nav="detalhe"><span class="material-symbols-outlined">view_module</span> Detalhe</button>
-      <button data-nav="pecas"><span class="material-symbols-outlined">inventory_2</span> Peças</button>
-    </nav>
-    <div class="sidebar-foot">
-      FONTE: CORTE LOJA 18<br />
-      REF: PLANOGRAM ANALYTICS
-    </div>
-  </aside>
 
-  <div class="main">
-    <header class="topbar">
-      <div>
-        <h1>Análise de Planograma</h1>
-        <div id="storeLabel" style="font-size:12px;color:var(--on-variant);margin-top:2px"></div>
-      </div>
-      <div class="filters">
-        <select id="filterTipo" aria-label="Filtrar tipo">
-          <option value="ALL">Todos os equipamentos</option>
-          <option value="GO">GO — Mercearia</option>
-          <option value="GB">GB — Perfumaria</option>
-          <option value="BR">BR — Bebidas</option>
-          <option value="BP">BP — Pães</option>
-          <option value="GC">GC — Expositor</option>
-        </select>
-        <input id="search" type="search" placeholder="Buscar gôndola, categoria…" />
-        <button type="button" class="btn-help" id="btnHelp" title="Critérios de leitura" aria-label="Abrir critérios de leitura" aria-haspopup="dialog" aria-controls="helpModal">
-          <span class="material-symbols-outlined" aria-hidden="true">help</span>
-        </button>
-      </div>
-    </header>
-
-    <div class="content">
-      <section id="section-kpis" class="view-panel">
-        <div class="kpi-row" id="kpis"></div>
-        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
-        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
-      </section>
-
-      <section id="section-pecas" class="view-panel">
-        <div class="section-title">
-          <h2>Totalizador por Peça e Tamanho</h2>
-          <div class="legend">
-            <span>Fonte: linha totalizadora Corte Loja 18</span>
-          </div>
-        </div>
-        <div class="pecas-board" id="pecasBoard"></div>
-        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
-        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
-      </section>
-
-      <section id="section-planta" class="board view-panel">
-        <div>
-          <div class="section-title">
-            <h2>Planta Baixa Interativa</h2>
-            <div class="legend">
-              <span><i class="dot go"></i> GO</span>
-              <span><i class="dot gb"></i> GB</span>
-              <span><i class="dot br"></i> BR</span>
-              <span><i class="dot bp"></i> BP</span>
-              <span><i class="dot warn"></i> BOM parcial</span>
-            </div>
-          </div>
-          <div class="floor-map glass" id="floorMap"></div>
-        </div>
-        <div>
-          <div class="section-title">
-            <h2>Resumo por Equipamento</h2>
-          </div>
-          <div class="cat-list" id="catList"></div>
-        </div>
-        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
-        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
-      </section>
-
-      <section id="section-gondolas" class="view-panel">
-        <div class="section-title">
-          <h2>Visão Panorâmica Gôndola a Gôndola</h2>
-          <div class="legend">
-            <span><i class="dot ok"></i> Corte completo</span>
-            <span><i class="dot warn"></i> Sem prateleiras no BOM</span>
-            <span class="legend-hint">Barra do topo = tipo · use ? para critérios</span>
-          </div>
-        </div>
-        <div class="gondola-grid" id="gondolaGrid"></div>
-        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
-        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
-      </section>
-
-      <section class="detail view-panel" id="detail">
-        <div class="section-title">
-          <h2>Detalhe do Equipamento</h2>
-          <div class="legend">
-            <span>Face A/B · módulos · prateleiras · braços</span>
-          </div>
-        </div>
-        <div id="detailBody"></div>
-        <img class="view-logo view-logo-abb" src="assets/logo-abb.jpeg" alt="" />
-        <img class="view-logo view-logo-bo" src="assets/logo-barraoeste.png" alt="" />
-      </section>
-    </div>
+    <footer class="dock">
+      <p class="welcome">
+        Seja benvindo ao Projeto Loja 18, não deixe de analisar cada gôndola,
+        módulo a módulo, espaço a espaço — seus comentários e críticas são
+        importantes para o Time Gecat.
+      </p>
+      <a class="btn-entrada" href="app.html">Entrada</a>
+    </footer>
   </div>
-
-  <div class="help-overlay" id="helpModal" hidden role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-    <div class="help-panel glass">
-      <header class="help-head">
-        <div>
-          <h2 id="helpTitle">Critérios de leitura</h2>
-          <p>Como interpretar barras, badges e o desenho das gôndolas</p>
-        </div>
-        <button type="button" class="btn" id="btnCloseHelp" aria-label="Fechar">
-          <span class="material-symbols-outlined" style="font-size:18px">close</span>
-        </button>
-      </header>
-
-      <div class="help-body">
-        <section class="help-block">
-          <h3>1. Barra colorida no topo do card</h3>
-          <p>Indica o <strong>tipo de equipamento</strong>, não o status BOM. BR e BP podem ambos estar “PARCIAL” e ter cores diferentes.</p>
-          <div class="help-swatches">
-            <div class="help-swatch"><i class="sw go"></i><span>GO · Mercearia</span></div>
-            <div class="help-swatch"><i class="sw br"></i><span>BR · Bebidas</span></div>
-            <div class="help-swatch"><i class="sw bp"></i><span>BP · Padaria</span></div>
-            <div class="help-swatch"><i class="sw gb"></i><span>GB · Parede</span></div>
-            <div class="help-swatch"><i class="sw gc"></i><span>GC · Expositor</span></div>
-          </div>
-        </section>
-
-        <section class="help-block">
-          <h3>2. Badge de status (canto superior direito)</h3>
-          <p>Reflete o <strong>preenchimento do BOM</strong> no Excel (módulos × hardware de prateleira).</p>
-          <table class="help-table">
-            <thead>
-              <tr><th>Badge</th><th>Significado</th><th>Quando aparece</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="badge ok">BOM OK</span></td>
-                <td>Corte completo</td>
-                <td>Módulos com quantidade de prateleiras / braços informada</td>
-              </tr>
-              <tr>
-                <td><span class="badge warn">PARCIAL</span></td>
-                <td>BOM incompleto</td>
-                <td>Há módulos e categorias, mas <em>0 prateleiras</em> no detalhe (comum em BR/BP)</td>
-              </tr>
-              <tr>
-                <td><span class="badge alert">VAZIO</span></td>
-                <td>Sem preenchimento útil</td>
-                <td>Equipamento sem dados de corte utilizáveis</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="help-block">
-          <h3>3. Blocos laranja / verdes no desenho</h3>
-          <p>Cada retângulo vertical é um <strong>módulo</strong> da face. A cor do bloco é o status daquele módulo:</p>
-          <div class="help-mod-row">
-            <div class="help-mod-sample">
-              <div class="mod-cell ok"><div class="mod-shelves"><i></i><i></i><i></i><i></i></div></div>
-              <span><strong>Verde</strong> — tem prateleiras no Excel (≥ 1)</span>
-            </div>
-            <div class="help-mod-sample">
-              <div class="mod-cell warn"><div class="mod-shelves empty-shelves"><i></i><i></i><i></i></div></div>
-              <span><strong>Laranja</strong> — módulo declarado, mas 0 prateleiras (ou sintético)</span>
-            </div>
-            <div class="help-mod-sample">
-              <div class="mod-cell empty"></div>
-              <span><strong>Vazio</strong> — sem módulo / placeholder</span>
-            </div>
-          </div>
-          <p class="help-note">As linhas horizontais dentro do bloco verde representam prateleiras reais (até 6 desenhadas). No bloco laranja, as 3 linhas claras são só <strong>placeholder visual</strong> — não contam como prateleiras. Por isso o rodapé pode mostrar “0 prateleiras” mesmo com linhas no desenho.</p>
-        </section>
-
-        <section class="help-block">
-          <h3>4. Por que uns cards têm muitos blocos finos?</h3>
-          <p>A largura do card é fixa: quanto mais módulos na face, mais estreitos ficam os retângulos. Ex.: BR-05 com ~17 módulos parece “denso”; BR-07 com poucos módulos parece “largo”. Isso não muda o status — só a quantidade de módulos.</p>
-        </section>
-
-        <section class="help-block">
-          <h3>5. Totais oficiais vs. detalhe por gôndola</h3>
-          <ul>
-            <li><strong>KPI / Peças</strong> — totalizador da planilha (ex.: 822 prateleiras da loja).</li>
-            <li><strong>Card da gôndola</strong> — soma só do que veio no corte daquele endereço (GO costuma ter prat.; BR/BP frequentemente 0).</li>
-            <li>Pendência típica: completar BOM de BR/BP para o detalhe bater com o totalizador.</li>
-          </ul>
-        </section>
-
-        <section class="help-block help-resumo">
-          <h3>Resumo rápido</h3>
-          <table class="help-table">
-            <thead>
-              <tr><th>Elemento</th><th>Significa</th><th>Não significa</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Barra azul / vermelha no topo</td>
-                <td>Tipo (BR / BP / …)</td>
-                <td>Gravidade do status</td>
-              </tr>
-              <tr>
-                <td>Badge PARCIAL</td>
-                <td>Falta hardware de prateleira no Excel</td>
-                <td>Erro de cor da barra</td>
-              </tr>
-              <tr>
-                <td>Módulo laranja + linhas claras</td>
-                <td>Módulo existe; prat. = 0</td>
-                <td>Que há 3 prateleiras</td>
-              </tr>
-              <tr>
-                <td>Muitos blocos finos</td>
-                <td>Muitos módulos na face</td>
-                <td>Mais prateleiras</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </div>
-    </div>
-  </div>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>

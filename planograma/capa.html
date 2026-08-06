@@ -33,14 +33,41 @@
       z-index: 5;
       filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
     }
-    .logo-abb {
+    .credit {
       position: absolute;
       right: 36px;
       bottom: 28px;
+      z-index: 5;
+      text-align: center;
+      width: 260px;
+      padding: 10px 12px 8px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(18,60,95,0.14);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .logo-abb {
+      display: block;
       height: 86px;
       width: auto;
-      z-index: 5;
+      margin: 0 auto 10px;
       filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
+    }
+    .participacao {
+      margin: 0;
+      padding-top: 8px;
+      border-top: 1px solid rgba(18,60,95,0.14);
+      font-size: 12px;
+      line-height: 1.4;
+      color: #4d6880;
+    }
+    .participacao strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #123047;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
     .title {
       position: absolute;
@@ -69,7 +96,7 @@
       left: 48px;
       right: 48px;
       top: 120px;
-      bottom: 120px;
+      bottom: 150px;
       border-radius: 14px;
       background: rgba(255,255,255,0.55);
       border: 1px solid rgba(18,60,95,0.12);
@@ -121,7 +148,13 @@
 <body>
   <div class="stage" id="capa">
     <img class="logo-bo" src="assets/logo-barraoeste.png" alt="Barra Oeste" />
-    <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
+    <aside class="credit">
+      <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
+      <p class="participacao">
+        <strong>Participação</strong>
+        Tatiana Batista e Jefferson Portilho
+      </p>
+    </aside>
 
     <div class="title">
       <h1>PLANOGRAMA LOJA 18</h1>
