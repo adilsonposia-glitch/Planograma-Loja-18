@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Planograma Loja 18 — Entrada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #123047;
+      --ink-soft: #4d6880;
+      --outline: rgba(18, 60, 95, 0.14);
+      --glass: rgba(255, 255, 255, 0.92);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Geist", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 560px at 8% -5%, rgba(255, 255, 255, 0.85), transparent 55%),
+        radial-gradient(900px 520px at 96% 100%, rgba(170, 210, 235, 0.7), transparent 52%),
+        linear-gradient(165deg, #eef6fb 0%, #d5e8f4 52%, #e8f2f9 100%);
+    }
+
+    .stage {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(12px, 2vw, 24px);
+    }
+
+    .capa-frame {
+      position: relative;
+      flex: 1;
+      min-height: min(72vh, 820px);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--outline);
+      box-shadow:
+        0 18px 48px rgba(18, 48, 71, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+      background: #e8f2f8;
+      animation: rise 0.75s ease both;
+    }
+
+    .capa-frame > img.capa {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    /* Crédito discreto — planta permanece em primeiro plano */
+    .credit {
+      position: absolute;
+      right: clamp(10px, 1.6vw, 18px);
+      bottom: clamp(10px, 1.4vw, 16px);
+      z-index: 3;
+      width: min(28%, 168px);
+      text-align: center;
+      padding: 6px 8px 5px;
+      background: rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(18, 60, 95, 0.08);
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+      box-shadow: none;
+      opacity: 0.72;
+      pointer-events: none;
+      transition: opacity 0.25s ease, background 0.25s ease;
+      animation: rise 0.85s 0.12s ease both;
+    }
+
+    .capa-frame:hover .credit {
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .credit .logo-abb {
+      display: block;
+      height: clamp(28px, 3.2vw, 40px);
+      width: auto;
+      margin: 0 auto 4px;
+      opacity: 0.85;
+      filter: none;
+    }
+
+    .credit .participacao {
+      margin: 0;
+      padding-top: 4px;
+      border-top: 1px solid rgba(18, 60, 95, 0.1);
+      font-size: clamp(9px, 0.95vw, 10px);
+      line-height: 1.35;
+      color: rgba(77, 104, 128, 0.9);
+    }
+
+    .credit .participacao strong {
+      display: block;
+      margin-bottom: 1px;
+      color: rgba(18, 48, 71, 0.7);
+      font-weight: 600;
+      font-size: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .dock {
+      margin-top: clamp(14px, 2vw, 20px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      animation: rise 0.9s 0.18s ease both;
+    }
+
+    .welcome {
+      flex: 1 1 280px;
+      max-width: 46rem;
+      margin: 0;
+      font-size: clamp(14px, 1.5vw, 17px);
+      line-height: 1.55;
+    }
+
+    .btn-entrada {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-width: 168px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(165deg, #0b6f8c 0%, #0284a8 100%);
+      color: #fff;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(2, 132, 168, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-entrada:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(2, 132, 168, 0.36);
+      filter: brightness(1.05);
+    }
+
+    .btn-entrada:active { transform: translateY(0); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      .capa-frame { min-height: 52vh; }
+
+      .credit {
+        width: min(46%, 150px);
+        opacity: 0.65;
+      }
+
+      .dock {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-entrada { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="capa-frame" aria-label="Capa Planograma Loja 18">
+      <img
+        class="capa"
+        src="assets/capa-planograma-loja-18.png"
+        alt="Planograma Loja 18 — Supermarket Santa Cruz, 1º pavimento"
+      />
+
+      <aside class="credit">
+        <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista — inteligência de negócio" />
+        <p class="participacao">
+          <strong>Participação</strong>
+          Tatiana Batista e Jefferson Portilho
+        </p>
+      </aside>
+    </div>
+
+    <footer class="dock">
+      <p class="welcome">
+        Seja benvindo ao Projeto Loja 18, não deixe de analisar cada gôndola,
+        módulo a módulo, espaço a espaço — seus comentários e críticas são
+        importantes na otimização dos estoques futuros e evitar desperdício
+        na instalação e fabricação do mobiliário.
+      </p>
+      <a class="btn-entrada" href="app.html">Entrada</a>
+    </footer>
+  </div>
+</body>
+</html>

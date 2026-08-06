@@ -56,47 +56,56 @@
       object-position: center center;
     }
 
-    /* Logo subida + participação no lugar da logo antiga */
+    /* Crédito discreto — planta permanece em primeiro plano */
     .credit {
       position: absolute;
-      right: clamp(12px, 2.2vw, 28px);
-      bottom: clamp(12px, 2vw, 24px);
+      right: clamp(10px, 1.6vw, 18px);
+      bottom: clamp(10px, 1.4vw, 16px);
       z-index: 3;
-      width: min(42%, 280px);
+      width: min(28%, 168px);
       text-align: center;
-      padding: 12px 14px 10px;
-      background: var(--glass);
-      border: 1px solid var(--outline);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 24px rgba(18, 48, 71, 0.1);
+      padding: 6px 8px 5px;
+      background: rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(18, 60, 95, 0.08);
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+      box-shadow: none;
+      opacity: 0.72;
+      pointer-events: none;
+      transition: opacity 0.25s ease, background 0.25s ease;
       animation: rise 0.85s 0.12s ease both;
+    }
+
+    .capa-frame:hover .credit {
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.55);
     }
 
     .credit .logo-abb {
       display: block;
-      height: clamp(64px, 8vw, 88px);
+      height: clamp(28px, 3.2vw, 40px);
       width: auto;
-      margin: 0 auto 10px;
-      filter: drop-shadow(0 2px 8px rgba(18, 48, 71, 0.12));
+      margin: 0 auto 4px;
+      opacity: 0.85;
+      filter: none;
     }
 
     .credit .participacao {
       margin: 0;
-      padding-top: 10px;
-      border-top: 1px solid var(--outline);
-      font-size: clamp(12px, 1.2vw, 13px);
-      line-height: 1.45;
-      color: var(--ink-soft);
+      padding-top: 4px;
+      border-top: 1px solid rgba(18, 60, 95, 0.1);
+      font-size: clamp(9px, 0.95vw, 10px);
+      line-height: 1.35;
+      color: rgba(77, 104, 128, 0.9);
     }
 
     .credit .participacao strong {
       display: block;
-      margin-bottom: 3px;
-      color: var(--ink);
+      margin-bottom: 1px;
+      color: rgba(18, 48, 71, 0.7);
       font-weight: 600;
-      font-size: 11px;
-      letter-spacing: 0.07em;
+      font-size: 8px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -157,7 +166,8 @@
       .capa-frame { min-height: 52vh; }
 
       .credit {
-        width: min(72%, 240px);
+        width: min(46%, 150px);
+        opacity: 0.65;
       }
 
       .dock {
@@ -191,7 +201,8 @@
       <p class="welcome">
         Seja benvindo ao Projeto Loja 18, não deixe de analisar cada gôndola,
         módulo a módulo, espaço a espaço — seus comentários e críticas são
-        importantes para o Time Gecat.
+        importantes na otimização dos estoques futuros e evitar desperdício
+        na instalação e fabricação do mobiliário.
       </p>
       <a class="btn-entrada" href="app.html">Entrada</a>
     </footer>
