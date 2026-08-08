@@ -9,26 +9,99 @@
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
-      width: 1600px;
-      height: 900px;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
       font-family: "Geist", "Segoe UI", sans-serif;
       background: #dceaf4;
+    }
+    .viewport {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
     .stage {
       width: 1600px;
       height: 900px;
       position: relative;
+      flex-shrink: 0;
+      transform-origin: center center;
       background:
         radial-gradient(900px 500px at 8% 0%, rgba(255,255,255,0.75), transparent 55%),
         radial-gradient(700px 420px at 92% 100%, rgba(180,214,236,0.55), transparent 50%),
         linear-gradient(165deg, #eef6fb 0%, #d7e9f5 55%, #e8f2f9 100%);
     }
+    .intro-panel {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      bottom: 18px;
+      width: 300px;
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      padding: 22px 20px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(18, 60, 95, 0.12);
+      box-shadow: 0 8px 24px rgba(18, 48, 71, 0.08);
+      color: #23485c;
+    }
+    .intro-panel h2 {
+      margin: 0 0 14px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      color: #0b4f66;
+    }
+    .intro-panel p {
+      margin: 0 0 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #3d5a6e;
+    }
+    .intro-panel .participacao {
+      margin-top: auto;
+      margin-bottom: 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #4d6880;
+    }
+    .intro-panel .participacao strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0b4f66;
+      font-size: 13px;
+    }
+    .btn-entrada {
+      margin-top: 16px;
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 12px 26px;
+      border-radius: 8px;
+      background: linear-gradient(165deg, #0b6f8c 0%, #0284a8 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 10px 28px rgba(2, 132, 168, 0.28);
+    }
+    .btn-entrada:hover { filter: brightness(1.05); }
     .logo-bo {
       position: absolute;
       top: 28px;
       left: 36px;
-      height: 78px;
+      height: 100px;
       width: auto;
       z-index: 5;
       filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
@@ -70,6 +143,7 @@
       right: 48px;
       top: 120px;
       bottom: 120px;
+      padding-right: 330px;
       border-radius: 14px;
       background: rgba(255,255,255,0.55);
       border: 1px solid rgba(18,60,95,0.12);
@@ -119,8 +193,9 @@
   </style>
 </head>
 <body>
+  <div class="viewport">
   <div class="stage" id="capa">
-    <img class="logo-bo" src="assets/logo-barraoeste.png" alt="Barra Oeste" />
+    <img class="logo-bo" src="assets/logo-supermarket.png" alt="Supermarket" />
     <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
 
     <div class="title">
@@ -140,6 +215,19 @@
       - Check-outs em coluna vertical à direita da área de vendas
     -->
     <div class="plan-wrap">
+      <aside class="intro-panel">
+        <h2>Proposta Detalhada do Planograma — Loja 18 (Santa Cruz)</h2>
+        <p>Este material apresenta a análise detalhada do planograma, gôndola a gôndola e módulo a módulo.</p>
+        <p>Sua avaliação é fundamental: críticas e sugestões podem contribuir para a redução de despesas na aquisição e confecção de mobiliário, além de ajudar a evitar excessos ou rupturas de estoque.</p>
+        <p>Acesse o plano completo no botão abaixo.</p>
+        <p>Bom trabalho!</p>
+        <p class="participacao">
+          <strong>Participação:</strong>
+          Tatiana Batista<br />
+          Jefferson Portilho
+        </p>
+        <a class="btn-entrada" href="index.html">Entrada</a>
+      </aside>
       <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
@@ -268,6 +356,7 @@
       <span><i class="sw" style="background:#cfe6f2"></i>Balcões</span>
     </div>
   </div>
+  </div>
   <script>
     // Check-outs 01–16 em coluna (direita da área de vendas)
     const g = document.getElementById("co-list");
@@ -278,6 +367,19 @@
         <rect class="unit" x="820" y="${y}" width="48" height="22" rx="2" fill="#ecfdf5" stroke="#059669"/>
         <text class="lbl lbl-sm" x="844" y="${y + 11}">${id}</text>`;
     }
+
+    // Escala a capa original 1600×900 para caber inteira na tela
+    (function fitStage() {
+      const stage = document.getElementById("capa");
+      function resize() {
+        const sx = window.innerWidth / 1600;
+        const sy = window.innerHeight / 900;
+        const s = Math.min(sx, sy);
+        stage.style.transform = "scale(" + s + ")";
+      }
+      resize();
+      window.addEventListener("resize", resize);
+    })();
   </script>
 </body>
 </html>
