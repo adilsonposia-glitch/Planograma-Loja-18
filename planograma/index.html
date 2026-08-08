@@ -12,7 +12,7 @@
       --ink: #123047;
       --ink-soft: #4d6880;
       --outline: rgba(18, 60, 95, 0.14);
-      --dock-h: clamp(88px, 14vh, 120px);
+      --dock-h: clamp(84px, 13vh, 112px);
     }
 
     * { box-sizing: border-box; }
@@ -42,7 +42,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #dceaf4;
+      background: #d5e8f4;
       animation: rise 0.75s ease both;
     }
 
@@ -50,54 +50,43 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center center;
     }
 
-    /* Destaque: logo AB + participação */
     .credit {
       position: absolute;
-      right: clamp(12px, 2vw, 28px);
-      bottom: clamp(12px, 2vw, 24px);
+      right: clamp(14px, 2.2vw, 32px);
+      bottom: clamp(14px, 2.2vw, 28px);
       z-index: 3;
-      width: min(34%, 240px);
+      width: min(36%, 260px);
       text-align: center;
-      padding: 14px 16px 12px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(11, 111, 140, 0.22);
+      padding: 16px 18px 14px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(11, 111, 140, 0.28);
       border-radius: 12px;
       backdrop-filter: blur(10px);
       box-shadow:
-        0 10px 28px rgba(18, 48, 71, 0.14),
-        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        0 12px 30px rgba(18, 48, 71, 0.16),
+        0 0 0 1px rgba(255, 255, 255, 0.85) inset;
       animation: rise 0.85s 0.12s ease both;
-    }
-
-    .credit .logo-abb {
-      display: block;
-      height: clamp(52px, 6.5vw, 72px);
-      width: auto;
-      margin: 0 auto 10px;
-      filter: drop-shadow(0 2px 6px rgba(18, 48, 71, 0.12));
     }
 
     .credit .participacao {
       margin: 0;
-      padding-top: 10px;
-      border-top: 2px solid rgba(2, 132, 168, 0.28);
-      font-size: clamp(12px, 1.25vw, 14px);
+      font-size: clamp(14px, 1.45vw, 17px);
       line-height: 1.4;
       color: var(--ink);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .credit .participacao strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       color: #0b6f8c;
       font-weight: 700;
-      font-size: clamp(11px, 1.1vw, 12px);
-      letter-spacing: 0.08em;
+      font-size: clamp(12px, 1.2vw, 13px);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
@@ -164,13 +153,13 @@
         overflow: hidden;
       }
 
-      .credit {
-        width: min(58%, 200px);
-        padding: 10px 12px;
+      .capa-frame > img.capa {
+        object-fit: contain;
       }
 
-      .credit .logo-abb {
-        height: clamp(40px, 10vw, 56px);
+      .credit {
+        width: min(62%, 220px);
+        padding: 12px 14px;
       }
 
       .dock {
@@ -193,7 +182,6 @@
       />
 
       <aside class="credit">
-        <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista — inteligência de negócio" />
         <p class="participacao">
           <strong>Participação</strong>
           Tatiana Batista e Jefferson Portilho
