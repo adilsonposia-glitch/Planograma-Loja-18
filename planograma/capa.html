@@ -97,35 +97,32 @@
       box-shadow: 0 10px 28px rgba(2, 132, 168, 0.28);
     }
     .btn-entrada:hover { filter: brightness(1.05); }
-    .logo-bo {
+    .top-bar {
       position: absolute;
-      top: 20px;
-      left: 36px;
-      height: 96px;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 112px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 220px 1fr 220px;
+      align-items: center;
+      padding: 12px 36px 0;
+      gap: 16px;
+    }
+    .logo-bo {
+      justify-self: start;
+      height: 88px;
       width: auto;
       max-width: 200px;
       object-fit: contain;
-      z-index: 5;
-      filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
-    }
-    .logo-abb {
-      position: absolute;
-      right: 36px;
-      bottom: 28px;
-      height: 86px;
-      width: auto;
-      z-index: 5;
       filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
     }
     .title {
-      position: absolute;
-      left: 50%;
-      top: 28px;
-      transform: translateX(-50%);
       text-align: center;
-      z-index: 4;
+      justify-self: center;
       max-width: 720px;
-      padding: 0 16px;
+      padding: 0 8px;
     }
     .title h1 {
       margin: 0;
@@ -141,12 +138,20 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
+    .logo-abb {
+      justify-self: end;
+      height: 72px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(18,48,71,0.12));
+    }
     .plan-wrap {
       position: absolute;
       left: 48px;
       right: 48px;
       top: 120px;
-      bottom: 120px;
+      bottom: 72px;
       padding-right: 330px;
       border-radius: 14px;
       background: rgba(255,255,255,0.55);
@@ -184,7 +189,7 @@
     .legend {
       position: absolute;
       left: 48px;
-      bottom: 36px;
+      bottom: 22px;
       display: flex;
       gap: 16px;
       font-size: 11px;
@@ -199,13 +204,14 @@
 <body>
   <div class="viewport">
   <div class="stage" id="capa">
-    <img class="logo-bo" src="assets/logo-supermarket.png" alt="Supermarket" />
-    <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
-
-    <div class="title">
-      <h1>PLANOGRAMA LOJA 18</h1>
-      <p>Supermarket Santa Cruz · 1º Pavimento</p>
-    </div>
+    <header class="top-bar">
+      <img class="logo-bo" src="assets/logo-supermarket.png" alt="Supermarket" />
+      <div class="title">
+        <h1>PLANOGRAMA LOJA 18</h1>
+        <p>Supermarket Santa Cruz · 1º Pavimento</p>
+      </div>
+      <img class="logo-abb" src="assets/logo-abb.jpeg" alt="Adilson Baptista" />
+    </header>
 
     <!--
       Coordenadas alinhadas à planta 1ºPavto_Planograma (área de vendas):
@@ -230,7 +236,7 @@
           Tatiana Batista<br />
           Jefferson Portilho
         </p>
-        <a class="btn-entrada" href="index.html">Entrada</a>
+        <a class="btn-entrada" href="index.html?v=analise">Entrada</a>
       </aside>
       <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
