@@ -17,8 +17,10 @@
   --go: #0891b2;
   --br: #6366f1;
   --bp: #e11d48;
+  --gp: #be123c;
   --gb: #0ea5b7;
   --gc: #d97706;
+  --ex: #a16207;
   --radius: 8px;
   --font: "Geist", "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "Consolas", monospace;
@@ -209,7 +211,9 @@ body {
 .dot.go { background: var(--go); }
 .dot.br { background: var(--br); }
 .dot.bp { background: var(--bp); }
+.dot.gp { background: var(--gp); }
 .dot.gb { background: var(--gb); }
+.dot.ex { background: var(--ex); }
 .dot.ok { background: var(--heatmap-green); }
 .dot.warn { background: var(--heatmap-yellow); }
 .dot.alert { background: var(--heatmap-red); }
@@ -284,8 +288,10 @@ body {
 .gondola-chip.tipo-GO { border-color: rgba(8,145,178,0.55); background: rgba(8,145,178,0.12); color: var(--go); }
 .gondola-chip.tipo-BR { border-color: rgba(99,102,241,0.55); background: rgba(99,102,241,0.1); color: var(--br); }
 .gondola-chip.tipo-BP { border-color: rgba(225,29,72,0.45); background: rgba(225,29,72,0.08); color: var(--bp); }
+.gondola-chip.tipo-GP { border-color: rgba(190,18,60,0.5); background: rgba(190,18,60,0.1); color: var(--gp); }
 .gondola-chip.tipo-GB { border-color: rgba(14,165,183,0.55); background: rgba(14,165,183,0.12); color: var(--gb); }
 .gondola-chip.tipo-GC { border-color: rgba(217,119,6,0.55); background: rgba(217,119,6,0.1); color: var(--gc); }
+.gondola-chip.tipo-EX { border-color: rgba(161,98,7,0.55); background: rgba(161,98,7,0.1); color: var(--ex); }
 .gondola-chip.parcial { border-style: dashed; opacity: 0.85; }
 
 /* Category list */
@@ -339,8 +345,10 @@ body {
 .gondola-card.tipo-GO { border-top-color: var(--go); }
 .gondola-card.tipo-BR { border-top-color: var(--br); }
 .gondola-card.tipo-BP { border-top-color: var(--bp); }
+.gondola-card.tipo-GP { border-top-color: var(--gp); }
 .gondola-card.tipo-GB { border-top-color: var(--gb); }
 .gondola-card.tipo-GC { border-top-color: var(--gc); }
+.gondola-card.tipo-EX { border-top-color: var(--ex); }
 .gondola-card.active { border-color: var(--primary-bright); }
 .gondola-card .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; gap: 8px; }
 .gondola-card .head .title { font-family: var(--mono); font-size: 18px; font-weight: 700; }
@@ -849,8 +857,10 @@ body {
 .help-swatch .sw.go { background: var(--go); }
 .help-swatch .sw.br { background: var(--br); }
 .help-swatch .sw.bp { background: var(--bp); }
+.help-swatch .sw.gp { background: var(--gp); }
 .help-swatch .sw.gb { background: var(--gb); }
 .help-swatch .sw.gc { background: var(--gc); }
+.help-swatch .sw.ex { background: var(--ex); }
 
 .help-table {
   width: 100%;

@@ -29,7 +29,7 @@
     btnCloseHelp: document.getElementById("btnCloseHelp"),
   };
 
-  const typeOrder = ["GO", "GB", "BR", "BP", "GC"];
+  const typeOrder = ["GO", "GB", "BR", "BP", "GP", "GC", "EX"];
 
   function statusOf(g) {
     if (g.preenchimento === "completo") return "ok";
@@ -65,7 +65,11 @@
       { label: "Módulos (totalizador)", value: t.modulos, hint: `${t.m13x40} × 1,30×0,40 + outros` },
       { label: "Prateleiras", value: t.prateleiras, hint: `GO detalhadas: ${goPrat}` },
       { label: "Braços", value: t.bracos.toLocaleString("pt-BR"), hint: `${t.aparadores} aparadores · ${t.ganchos} ganchos` },
-      { label: "Equipamentos", value: c.gondolas, hint: `${c.go} GO · ${c.br} BR · ${c.bp} BP · ${c.gb} GB` },
+      {
+        label: "Equipamentos",
+        value: c.gondolas,
+        hint: `${c.go} GO · ${c.br} BR · ${c.bp} BP · ${c.gp || 0} GP · ${c.gb} GB`,
+      },
     ];
     els.kpis.innerHTML = items
       .map(
@@ -195,7 +199,12 @@
       { key: "go", title: "Mercearia · GO", items: byTipo("GO"), cols: 3 },
       { key: "gb", title: "Parede · GB", items: byTipo("GB"), cols: 1 },
       { key: "br", title: "Bebidas · BR", items: byTipo("BR"), cols: 3 },
-      { key: "bp", title: "Padaria · BP / GC", items: [...byTipo("BP"), ...byTipo("GC")], cols: 4 },
+      {
+        key: "bp",
+        title: "Padaria · BP / GP / EX / GC",
+        items: [...byTipo("BP"), ...byTipo("GP"), ...byTipo("EX"), ...byTipo("GC")],
+        cols: 4,
+      },
     ];
 
     els.floorMap.innerHTML = zones

@@ -23,30 +23,28 @@ try {
   $wb = $excel.Workbooks.Open($xlsx.FullName)
   $names = @($wb.Worksheets | ForEach-Object { $_.Name })
   Write-Host ("Abas: " + ($names -join ' | '))
-  $preferred = @('Corte Loja 18', 'Mercadológico-LJ01-24.07', 'Mercadologico-LJ01-24.07')
+  # Preferir estritamente o layout "Corte" (totalizador em colunas de hardware).
+  # A aba LJ01 tem layout diferente (GP-01 etc.) e NÃO deve alimentar este parser.
+  $preferred = @('Corte Loja 18', 'Corte Loja18', 'Corte')
   $ws = $null
   foreach ($want in $preferred) {
     foreach ($s in $wb.Worksheets) {
-      if ($s.Name.Trim() -eq $want -or $s.Name -like '*LJ01*24.07*') { $ws = $s; break }
+      if ($s.Name.Trim() -eq $want -or $s.Name.Trim() -like 'Corte*Loja*18*') { $ws = $s; break }
     }
     if ($ws) { break }
   }
   if (-not $ws) {
-    # fallback: maior aba com GO-01 no texto das primeiras colunas
+    # fallback: aba com cabeçalho de hardware do Corte (Módulos 1,3x0,40)
     foreach ($s in $wb.Worksheets) {
       $u = $s.UsedRange
-      $found = $false
-      $maxR = [Math]::Min([int]$u.Rows.Count, 40)
-      $maxC = [Math]::Min([int]$u.Columns.Count, 5)
-      for ($r = 1; $r -le $maxR -and -not $found; $r++) {
-        for ($c = 1; $c -le $maxC; $c++) {
-          if ([string]$u.Cells.Item($r, $c).Text -match 'GO-01') { $found = $true; break }
-        }
-      }
-      if ($found -and [int]$u.Columns.Count -ge 20) { $ws = $s; break }
+      $maxC = [Math]::Min([int]$u.Columns.Count, 40)
+      $hdrBits = @()
+      for ($c = 1; $c -le $maxC; $c++) { $hdrBits += [string]$u.Cells.Item(2, $c).Text }
+      $hdrJoin = ($hdrBits -join '|')
+      if ($hdrJoin -match 'Módulos 1,3x0,40|Prateleiras 1,30x40|Braços 40cm') { $ws = $s; break }
     }
   }
-  if (-not $ws) { throw 'Nenhuma aba de corte/LJ01 encontrada no Excel.' }
+  if (-not $ws) { throw 'Nenhuma aba no layout Corte Loja 18 encontrada no Excel.' }
   Write-Host "Usando aba: $($ws.Name)"
 
   $used = $ws.UsedRange
@@ -88,9 +86,33 @@ function ToNum($x) {
 }
 function ToInt($x) { return [int][Math]::Round((ToNum $x)) }
 
-$lines = Get-Content -LiteralPath $csvPath -Encoding UTF8
+$lines = [System.Collections.Generic.List[string]]::new()
+$lines.AddRange([string[]](Get-Content -LiteralPath $csvPath -Encoding UTF8))
 Write-Host "Linhas CSV: $($lines.Count)"
 if ($lines.Count -lt 4) { throw 'CSV muito curto / vazio' }
+
+# GP-01 existe na planilha LJ01 mas costuma faltar no layout Corte — completar se ausente
+if (-not ($lines | Where-Object { $_ -match ';GP-01([.;]|$)' })) {
+  $setorPad = 'PADARIA / PAES'
+  $bpSample = $lines | Where-Object { $_ -match ';BP-03\.B\.6;' } | Select-Object -First 1
+  if ($bpSample -match '^[^;]*;([^;]+);') { $setorPad = $Matches[1] }
+  $insertAt = -1
+  for ($i = 0; $i -lt $lines.Count; $i++) {
+    if ($lines[$i] -match ';BP-03\.B\.6;') { $insertAt = $i + 1; break }
+  }
+  if ($insertAt -ge 0) {
+    $ocirc = [char]0x00F4; $oac = [char]0x00F3; $ced = [char]0x00E7
+    $gp = New-Object System.Collections.Generic.List[string]
+    $gp.Add((";{0};GP-01;G{1}ndola; 17 M{2}dulos  ;Padaria;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" -f $setorPad, $ocirc, $oac))
+    for ($n = 1; $n -le 17; $n++) {
+      $spec = "base + 5 prateleiras + 10 bra${ced}os + 6 aparadores"
+      $hw = '1,30x0,35;;;;1;;;;1;;;;5;;10;;;;;;;;6;;;;;;;;;;;'
+      $gp.Add((";{0};GP-01.{1};---;{2};Padaria;{3}" -f $setorPad, $n, $spec, $hw))
+    }
+    $lines.InsertRange($insertAt, $gp)
+    Write-Host ("AVISO: GP-01 ausente no Corte — injetados {0} modulos a partir da planilha LJ01" -f 17)
+  }
+}
 
 $hdr = $lines[1] -split ';', -1
 $tr  = $lines[2] -split ';', -1
@@ -106,7 +128,7 @@ $faces = [ordered]@{}
 for ($i = 3; $i -lt $lines.Count; $i++) {
   $p = $lines[$i] -split ';', -1
   $end = ($p[2] + '').Trim()
-  if ($end -notmatch '^((?:GO|BR|BP|GB|GC)-\d+(?:\.[AB])?)(?:\.(\d+))?$') { continue }
+  if ($end -notmatch '^((?:GO|BR|BP|GB|GC|GP|EX)-\d+(?:\.[AB])?)(?:\.(\d+))?$') { continue }
   $face = $Matches[1]; $modN = $Matches[2]
   if (-not $faces.Contains($face)) {
     $faces[$face] = @{
@@ -163,7 +185,9 @@ $typeLabel = @{
   GB = 'Gôndola Perfumaria'
   BR = 'Rack Bebidas'
   BP = 'Gôndola Pães'
+  GP = 'Gôndola Padaria'
   GC = 'Expositor'
+  EX = 'Expositor Ovos'
 }
 
 $islands = [ordered]@{}
@@ -373,7 +397,10 @@ $summary = @{
     go = @($gondolas | Where-Object { $_.tipo -eq 'GO' }).Count
     br = @($gondolas | Where-Object { $_.tipo -eq 'BR' }).Count
     bp = @($gondolas | Where-Object { $_.tipo -eq 'BP' }).Count
+    gp = @($gondolas | Where-Object { $_.tipo -eq 'GP' }).Count
     gb = @($gondolas | Where-Object { $_.tipo -eq 'GB' }).Count
+    ex = @($gondolas | Where-Object { $_.tipo -eq 'EX' }).Count
+    gc = @($gondolas | Where-Object { $_.tipo -eq 'GC' }).Count
   }
 }
 
@@ -391,7 +418,10 @@ $jsonPretty = $data | ConvertTo-Json -Depth 12
 $jsonCompact = $data | ConvertTo-Json -Depth 12 -Compress
 
 [IO.File]::WriteAllText((Join-Path $planDir 'data.json'), $jsonPretty, [Text.UTF8Encoding]::new($false))
-[IO.File]::WriteAllText((Join-Path $planDir 'data.js'), ("window.PLANOGRAMA_DATA=$jsonCompact;"), [Text.UTF8Encoding]::new($false))
+$jsPayload = "window.PLANOGRAMA_DATA=$jsonCompact;"
+[IO.File]::WriteAllText((Join-Path $planDir 'data.js'), $jsPayload, [Text.UTF8Encoding]::new($false))
+# index.html carrega data.test.js — manter espelhado
+[IO.File]::WriteAllText((Join-Path $planDir 'data.test.js'), $jsPayload, [Text.UTF8Encoding]::new($false))
 
 Write-Host ''
 Write-Host '=== REGEN OK ==='
