@@ -46,8 +46,11 @@
           <option value="BR">BR — Bebidas</option>
           <option value="BP">BP — Pães</option>
           <option value="GP">GP — Padaria</option>
-          <option value="EX">EX — Expositor</option>
-          <option value="GC">GC — Expositor</option>
+          <option value="IC">IC — Ilhas congelados</option>
+          <option value="MH">MH — Hortifruti</option>
+          <option value="MM">MM — Pontos extras</option>
+          <option value="EX">EX — Expositor ovos</option>
+          <option value="GC">GC — Expositor carvão</option>
         </select>
         <input id="search" type="search" placeholder="Buscar gôndola, categoria…" />
         <button type="button" class="btn-help" id="btnHelp" title="Critérios de leitura" aria-label="Abrir critérios de leitura" aria-haspopup="dialog" aria-controls="helpModal">
@@ -67,7 +70,7 @@
         <div class="section-title">
           <h2>Totalizador por Peça e Tamanho</h2>
           <div class="legend">
-            <span>Fonte: linha totalizadora Corte Loja 18</span>
+            <span>Fonte: Mercadológico-LJ01 (Excel Loja 18) — Cortes ignorado</span>
           </div>
         </div>
         <div class="pecas-board" id="pecasBoard"></div>
@@ -85,6 +88,9 @@
               <span><i class="dot br"></i> BR</span>
               <span><i class="dot bp"></i> BP</span>
               <span><i class="dot gp"></i> GP</span>
+              <span><i class="dot ic"></i> IC</span>
+              <span><i class="dot mh"></i> MH</span>
+              <span><i class="dot mm"></i> MM</span>
               <span><i class="dot ex"></i> EX</span>
               <span><i class="dot warn"></i> BOM parcial</span>
             </div>
@@ -251,7 +257,7 @@
     </div>
   </div>
 
-  <script src="data.test.js?v=gp01-fix"></script>
+  <script src="data.test.js?v=lj01-ic-mh-mm"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -21,6 +21,9 @@
   --gb: #0ea5b7;
   --gc: #d97706;
   --ex: #a16207;
+  --ic: #0284a8;
+  --mh: #16a34a;
+  --mm: #ca8a04;
   --radius: 8px;
   --font: "Geist", "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "Consolas", monospace;
@@ -214,6 +217,9 @@ body {
 .dot.gp { background: var(--gp); }
 .dot.gb { background: var(--gb); }
 .dot.ex { background: var(--ex); }
+.dot.ic { background: var(--ic); }
+.dot.mh { background: var(--mh); }
+.dot.mm { background: var(--mm); }
 .dot.ok { background: var(--heatmap-green); }
 .dot.warn { background: var(--heatmap-yellow); }
 .dot.alert { background: var(--heatmap-red); }
@@ -292,6 +298,9 @@ body {
 .gondola-chip.tipo-GB { border-color: rgba(14,165,183,0.55); background: rgba(14,165,183,0.12); color: var(--gb); }
 .gondola-chip.tipo-GC { border-color: rgba(217,119,6,0.55); background: rgba(217,119,6,0.1); color: var(--gc); }
 .gondola-chip.tipo-EX { border-color: rgba(161,98,7,0.55); background: rgba(161,98,7,0.1); color: var(--ex); }
+.gondola-chip.tipo-IC { border-color: rgba(2,132,168,0.55); background: rgba(2,132,168,0.12); color: var(--ic); }
+.gondola-chip.tipo-MH { border-color: rgba(22,163,74,0.55); background: rgba(22,163,74,0.1); color: var(--mh); }
+.gondola-chip.tipo-MM { border-color: rgba(202,138,4,0.55); background: rgba(202,138,4,0.12); color: var(--mm); }
 .gondola-chip.parcial { border-style: dashed; opacity: 0.85; }
 
 /* Category list */
@@ -349,6 +358,9 @@ body {
 .gondola-card.tipo-GB { border-top-color: var(--gb); }
 .gondola-card.tipo-GC { border-top-color: var(--gc); }
 .gondola-card.tipo-EX { border-top-color: var(--ex); }
+.gondola-card.tipo-IC { border-top-color: var(--ic); }
+.gondola-card.tipo-MH { border-top-color: var(--mh); }
+.gondola-card.tipo-MM { border-top-color: var(--mm); }
 .gondola-card.active { border-color: var(--primary-bright); }
 .gondola-card .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; gap: 8px; }
 .gondola-card .head .title { font-family: var(--mono); font-size: 18px; font-weight: 700; }

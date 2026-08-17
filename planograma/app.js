@@ -29,7 +29,7 @@
     btnCloseHelp: document.getElementById("btnCloseHelp"),
   };
 
-  const typeOrder = ["GO", "GB", "BR", "BP", "GP", "GC", "EX"];
+  const typeOrder = ["GO", "GB", "BR", "BP", "GP", "IC", "MH", "MM", "GC", "EX"];
 
   function statusOf(g) {
     if (g.preenchimento === "completo") return "ok";
@@ -68,7 +68,7 @@
       {
         label: "Equipamentos",
         value: c.gondolas,
-        hint: `${c.go} GO · ${c.br} BR · ${c.bp} BP · ${c.gp || 0} GP · ${c.gb} GB`,
+        hint: `${c.go} GO · ${c.br} BR · ${c.bp} BP · ${c.gp || 0} GP · ${c.ic || 0} IC · ${c.mh || 0} MH · ${c.gb} GB`,
       },
     ];
     els.kpis.innerHTML = items
@@ -201,8 +201,20 @@
       { key: "br", title: "Bebidas · BR", items: byTipo("BR"), cols: 3 },
       {
         key: "bp",
-        title: "Padaria · BP / GP / EX / GC",
-        items: [...byTipo("BP"), ...byTipo("GP"), ...byTipo("EX"), ...byTipo("GC")],
+        title: "Padaria · BP / GP",
+        items: [...byTipo("BP"), ...byTipo("GP")],
+        cols: 4,
+      },
+      {
+        key: "ic",
+        title: "Ilhas · IC",
+        items: byTipo("IC"),
+        cols: 4,
+      },
+      {
+        key: "mh",
+        title: "Hortifruti · MH / MM / EX",
+        items: [...byTipo("MH"), ...byTipo("MM"), ...byTipo("EX"), ...byTipo("GC")],
         cols: 4,
       },
     ];
