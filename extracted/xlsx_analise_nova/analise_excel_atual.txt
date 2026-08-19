@@ -1,0 +1,175 @@
+XLSX: C:\Users\escri\Downloads\Pós IA Anhanguera\Planograma Loja 18\03-08-26 (Loja 18 Proposta Layout em Maio26)-(Adilson).xlsx
+LastWrite: 08/19/2026 17:09:09  Size=2007162
+
+=== ABAS ===
+Capa                                       vis=hidden      used=59x30
+Planilha1                                  vis=visible     used=293x4
+Mercadológico-LJ01-24.07                   vis=visible     used=420x94
+Plan1                                      vis=visible     used=23x3
+Mercadológico-Salão Vendas(0)              vis=hidden      used=467x8
+Mercadológico - Salão Venda (2)            vis=hidden      used=364x21
+Mercadológico-Salão Venda(2)               vis=hidden      used=467x8
+Mercadológico-Salão Venda(3)               vis=hidden      used=476x8
+Mercadológico - Salão Vendas A             vis=hidden      used=70x8
+Linear de Balcões (Resumo)                 vis=hidden      used=27x3
+Mercadologico C5                           vis=hidden      used=52x1
+Cortes                                     vis=hidden      used=29x11
+GONDOLAS                                   vis=hidden      used=39x18
+Layout                                     vis=hidden      used=136x157
+Setorização                                vis=hidden      used=1x1
+Destilados                                 vis=hidden      used=31x14
+Cervejas                                   vis=hidden      used=32x14
+Salgadinhos                                vis=hidden      used=31x14
+Refri                                      vis=hidden      used=31x14
+Sucos                                      vis=hidden      used=31x14
+Água                                       vis=hidden      used=31x14
+Bazar                                      vis=hidden      used=34x7
+Rações                                     vis=hidden      used=34x7
+Sab Pó                                     vis=hidden      used=31x14
+Agua Sanit                                 vis=hidden      used=34x7
+Desinf                                     vis=hidden      used=34x7
+Det Liq                                    vis=hidden      used=34x7
+Pap Hig                                    vis=hidden      used=34x7
+Fraldas                                    vis=hidden      used=34x7
+Creme Dent                                 vis=hidden      used=34x7
+Shamp                                      vis=hidden      used=34x7
+Bisc Doc                                   vis=hidden      used=34x7
+Bis Sal                                    vis=hidden      used=34x7
+Doce Comp                                  vis=hidden      used=34x7
+Lig diet                                   vis=hidden      used=34x12
+Matinais                                   vis=hidden      used=34x7
+Café                                       vis=hidden      used=34x7
+Massas                                     vis=hidden      used=34x7
+Molhos                                     vis=hidden      used=34x7
+Azietes óleos                              vis=hidden      used=34x7
+Cereais                                    vis=hidden      used=34x10
+
+=== ABA DETALHE: Mercadológico-LJ01-24.07 ===
+UsedRange: 420x94  Address=$A$1:$CP$420
+
+=== CABECALHOS (1..35) ===
+  [ 1] A    'Nº'
+  [ 2] B    'Setor / Área'
+  [ 3] C    'Endereço Completo '
+  [ 4] D    'Endereço Gôndola'
+  [ 5] E    'Lado '
+  [ 6] F    'Número  Módulo '
+  [ 7] G    'Base'
+  [ 8] H    'Prateleiras '
+  [ 9] I    'Braços 0,40'
+  [10] J    'Braços 0,35'
+  [11] K    'Braços 0,60'
+  [12] L    'Barra 1,00'
+  [13] M    'Barras 1,30'
+  [14] N    'Ganchos 35x30cm'
+  [15] O    'Ganchos 30x25cm'
+  [16] P    'Ganchos 40x35cm'
+  [17] Q    'Ganchos Grosso Vassoura'
+  [18] R    'Anteparo Aramado 0,05cm'
+  [19] S    'Cesto carvão'
+  [20] T    'Cesto vinhos'
+  [21] U    'Anteparo Acrílico 1,00'
+  [22] V    'Cestos 1,00'
+  [23] W    'Cestos 1,30'
+  [24] X    'Divisor cesto 1,30'
+  [25] Y    'Divisor cesto 1,00'
+  [26] Z    'Cabeceira Gôndola'
+  [27] AA   'Porta Etiqueta'
+  [28] AB   'Tp Mobiliário '
+  [29] AC   'Especificação '
+  [30] AD   'Categoria(s) Mercadológica(s) Proposta(s)'
+  [31] AE   'Dimensão'
+  [32] AF   'Largura Gôndola'
+  [33] AG   'Profundidade Gôndola'
+  [34] AH   'Altura  Gôndola '
+  [35] AI   'Observações'
+  (UsedRange tem 94 colunas; headers nomeados ate 35)
+
+=== COLUNAS: preenchimento e amostra ===
+  col  1 'Nº' filled=418/419 unique=418 samples=[01 | 02 | 03 | 04 | 05 | 06 | 07 | 08]
+  col  2 'Setor / Área' filled=418/419 unique=10 samples=[Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis | Mercearia / Alimentos / Empório / Saudáveis]
+  col  3 'Endereço Completo' filled=418/419 unique=418 samples=[GO-01.A.1 | GO-01.A.2 | GO-01.A.3 | GO-01.A.4 | GO-01.A.5 | GO-01.A.6 | GO-01.A.7 | GO-01.A.8]
+  col  4 'Endereço Gôndola' filled=418/419 unique=53 samples=[GO-01 | GO-01 | GO-01 | GO-01 | GO-01 | GO-01 | GO-01 | GO-01]
+  col  5 'Lado' filled=418/419 unique=5 samples=[A | A | A | A | A | A | A | A]
+  col  6 'Número  Módulo' filled=418/419 unique=17 samples=[1 | 2 | 3 | 4 | 5 | 6 | 7 | 8]
+  col  7 'Base' filled=342/419 unique=13 samples=[1,30x0,40 | 1,30x0,40 | 1,30x0,40 | 1,30x0,40 | 1,30x0,40 | 1,30x0,40 | 1,30x0,40 | 1,30x0,40]
+  col  8 'Prateleiras' filled=320/419 unique=6 samples=[3 | 3 | 6 | 6 | 6 | 6 | 6 | 6]
+  col  9 'Braços 0,40' filled=268/419 unique=6 samples=[6 | 6 | 12 | 12 | 12 | 12 | 12 | 12]
+  col 10 'Braços 0,35' filled=35/419 unique=4 samples=[12 | 12 | 12 | 12 | 12 | 12 | 12 | 12]
+  col 11 'Braços 0,60' filled=17/419 unique=2 samples=[6 | 6 | 6 | 6 | 6 | 6 | 6 | 6]
+  col 12 'Barra 1,00' filled=4/419 unique=1 samples=[5 | 5 | 5 | 5]
+  col 13 'Barras 1,30' filled=20/419 unique=4 samples=[3 | 2 | 2 | 2 | 2 | 2 | 2 | 2]
+  col 14 'Ganchos 35x30cm' filled=14/419 unique=7 samples=[15 | 15 | 15 | 15 | 15 | 24 | 20 | 22]
+  col 15 'Ganchos 30x25cm' filled=9/419 unique=2 samples=[11 | 11 | 11 | 30 | 30 | 11 | 11 | 11]
+  col 16 'Ganchos 40x35cm' filled=1/419 unique=1 samples=[17]
+  col 17 'Ganchos Grosso Vassoura' filled=2/419 unique=1 samples=[6 | 6]
+  col 18 'Anteparo Aramado 0,05cm' filled=197/419 unique=7 samples=[6 | 6 | 6 | 6 | 6 | 6 | 6 | 6]
+  col 19 'Cesto carvão' filled=1/419 unique=1 samples=[5]
+  col 20 'Cesto vinhos' filled=18/419 unique=1 samples=[1 | 1 | 1 | 1 | 1 | 1 | 1 | 1]
+  col 21 'Anteparo Acrílico 1,00' filled=15/419 unique=3 samples=[4 | 4 | 4 | 4 | 4 | 3 | 3 | 3]
+  col 22 'Cestos 1,00' filled=10/419 unique=2 samples=[1 | 1 | 1 | 6 | 1 | 1 | 1 | 1]
+  col 23 'Cestos 1,30' filled=14/419 unique=2 samples=[1 | 1 | 1 | 1 | 1 | 1 | 1 | 1]
+  col 24 'Divisor cesto 1,30' filled=14/419 unique=2 samples=[3 | 3 | 3 | 3 | 3 | 3 | 3 | 3]
+  col 25 'Divisor cesto 1,00' filled=10/419 unique=2 samples=[3 | 3 | 3 | 18 | 3 | 3 | 3 | 3]
+  col 26 'Cabeceira Gôndola' filled=16/419 unique=1 samples=[1 | 1 | 1 | 1 | 1 | 1 | 1 | 1]
+  col 27 'Porta Etiqueta' filled=1/419 unique=1 samples=[,]
+  col 28 'Tp Mobiliário' filled=418/419 unique=8 samples=[Módulo | Módulo | Módulo | Módulo | Módulo | Módulo | Módulo | Módulo]
+  col 29 'Especificação' filled=343/419 unique=68 samples=[1 Base + 3 Prateleiras + 6 Braços + Expositor | 1 Base + 3 Prateleiras + 6 Braços | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados | 1 Base + 6 Prateleiras + 12 Braços + 6 Aparadores Aramados]
+  col 30 'Categoria(s) Mercadológica(s) Proposta(s)' filled=418/419 unique=159 samples=[TEMPERO (CASA PEDRO) / AUTO SERVIÇO | EXPOSITOR / ADOÇANTES | ADOÇANTES | GRANOLAS / SEMENTES / EMBALADOS | GELEIAS / DIETAS / MEL / MELADOS | ZERO LACTOSE / ZERO AÇUCAR / BISCOITO / BOLO | SUPLEMENTOS | SUPLEMENTOS]
+  col 31 'Dimensão' filled=342/419 unique=14 samples=[1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40 | 1,85x1,30x0,40]
+  col 32 'Largura Gôndola' filled=329/419 unique=4 samples=[1,30 | 1,30 | 1,30 | 1,30 | 1,30 | 1,30 | 1,30 | 1,30]
+  col 33 'Profundidade Gôndola' filled=329/419 unique=5 samples=[0,40 | 0,40 | 0,40 | 0,40 | 0,40 | 0,40 | 0,40 | 0,40]
+  col 34 'Altura  Gôndola' filled=318/419 unique=2 samples=[1,85 | 1,85 | 1,85 | 1,85 | 1,85 | 1,85 | 1,85 | 1,85]
+  col 35 'Observações' filled=181/419 unique=28 samples=[13 Expositores de temperos (66cm altura / 48 profundidade) Topo da gôndola e baixo prateleira | LIMPEZA PESADA | BANHEIRO - BALDES | VASSOURAS | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente) | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente) | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente) | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente) | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente) | Cesto (1,27m largura / 38cm profundidade/ 18cm altura fundos / 10cm altura frente)]
+
+=== EQUIPAMENTOS (Endereco Gondola / Completo) ===
+idx Completo=2 Gondola=3 Lado=4 Mod=5 Tp=27 Setor=1
+  BA: 3 equipamentos -> BA-01, BA-02, BA-03
+  BP: 3 equipamentos -> BP-01, BP-02, BP-03
+  BR: 5 equipamentos -> BR-01, BR-02, BR-03, BR-04, BR-09
+  EC: 1 equipamentos -> EC-01
+  EX: 1 equipamentos -> EX-01
+  GB: 4 equipamentos -> GB-01, GB-02, GB-03, GB-04
+  GO: 9 equipamentos -> GO-01, GO-02, GO-03, GO-04, GO-05, GO-06, GO-07, GO-08, GO-09
+  GP: 1 equipamentos -> GP-01
+  GS: 1 equipamentos -> GS-01
+  IC: 8 equipamentos -> IC-01, IC-02, IC-03, IC-04, IC-05, IC-06, IC-07, IC-08
+  MH: 9 equipamentos -> MH-01, MH-02, MH-03, MH-04, MH-05, MH-06, MH-07, MH-08, MH-09
+  MM: 4 equipamentos -> MM-01, MM-02, MM-03, MM-04
+  MQ: 1 equipamentos -> MQ-01
+  MS: 3 equipamentos -> MS-01, MS-02, MS-03
+Linhas sem endereco: 1
+
+=== Tp Mobiliario ===
+  Expositor Padaria = 36
+  Expositor Salgado = 4
+  Gôndola = 17
+  Gôndola Parede = 8
+  Ilha Congelado = 72
+  Mesa = 16
+  Mesa Quente = 1
+  Módulo = 264
+
+=== Setores ===
+  BAZAR / PERFUMARIA / LIMPEZA / EMPÓRIO = 69
+  BEBIDAS = 66
+  FRIOS / LATICÍNIOS / CONGELADOS = 72
+  HORTIFRUTI = 17
+  LEITE / LATICÍNIOS UHT = 11
+  MERCEARIA = 100
+  Mercearia / Alimentos / Empório / Saudáveis = 11
+  Mercearia /Não Alimentos/ Limpeza = 11
+  PADARIA / PÃES = 54
+  SALGADOS = 7
+
+=== PREVIEW Planilha1 (nao-Cortes, visivel) ===
+  R1:  | Rótulos de Coluna |  | 
+  R2:  | A | B | (vazio)
+  R3: Contagem de Base | 134 | 135 | 61
+  R4:  |  |  | 
+  R5:  |  |  | 
+  R6:  |  |  | 
+  R7:  |  |  | 
+  R8:  |  |  | 
+
+CSV exportado: C:\Users\escri\Downloads\Pós IA Anhanguera\Planograma Loja 18\extracted\xlsx_v2\sheet_Mercadologico-LJ01.csv (78817 bytes) cols=35 rows=420

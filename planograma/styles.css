@@ -16,14 +16,19 @@
   --heatmap-red: #dc2626;
   --go: #0891b2;
   --br: #6366f1;
+  --ba: #7c3aed;
   --bp: #e11d48;
   --gp: #be123c;
+  --gs: #c2410c;
   --gb: #0ea5b7;
   --gc: #d97706;
+  --ec: #92400e;
   --ex: #a16207;
   --ic: #0284a8;
   --mh: #16a34a;
   --mm: #ca8a04;
+  --ms: #ea580c;
+  --mq: #f97316;
   --radius: 8px;
   --font: "Geist", "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "Consolas", monospace;
@@ -213,13 +218,18 @@ body {
 .dot { width: 10px; height: 10px; border-radius: 999px; }
 .dot.go { background: var(--go); }
 .dot.br { background: var(--br); }
+.dot.ba { background: var(--ba); }
 .dot.bp { background: var(--bp); }
 .dot.gp { background: var(--gp); }
+.dot.gs { background: var(--gs); }
 .dot.gb { background: var(--gb); }
 .dot.ex { background: var(--ex); }
+.dot.ec { background: var(--ec); }
 .dot.ic { background: var(--ic); }
 .dot.mh { background: var(--mh); }
 .dot.mm { background: var(--mm); }
+.dot.ms { background: var(--ms); }
+.dot.mq { background: var(--mq); }
 .dot.ok { background: var(--heatmap-green); }
 .dot.warn { background: var(--heatmap-yellow); }
 .dot.alert { background: var(--heatmap-red); }
@@ -227,10 +237,11 @@ body {
 /* Floor map — zonas em grid (sem overlap) */
 .floor-map {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "go gb"
-    "br bp";
+    "br bp"
+    "ic mh";
   gap: 12px;
   min-height: 560px;
   height: auto;
@@ -254,6 +265,8 @@ body {
 .floor-zone.zone-gb { grid-area: gb; }
 .floor-zone.zone-br { grid-area: br; }
 .floor-zone.zone-bp { grid-area: bp; }
+.floor-zone.zone-ic { grid-area: ic; }
+.floor-zone.zone-mh { grid-area: mh; }
 .floor-zone-title {
   font-family: var(--mono);
   font-size: 10px;
@@ -293,14 +306,19 @@ body {
 .gondola-chip .gmeta { font-size: 9px; color: var(--on-variant); margin-top: 2px; }
 .gondola-chip.tipo-GO { border-color: rgba(8,145,178,0.55); background: rgba(8,145,178,0.12); color: var(--go); }
 .gondola-chip.tipo-BR { border-color: rgba(99,102,241,0.55); background: rgba(99,102,241,0.1); color: var(--br); }
+.gondola-chip.tipo-BA { border-color: rgba(124,58,237,0.55); background: rgba(124,58,237,0.1); color: var(--ba); }
 .gondola-chip.tipo-BP { border-color: rgba(225,29,72,0.45); background: rgba(225,29,72,0.08); color: var(--bp); }
 .gondola-chip.tipo-GP { border-color: rgba(190,18,60,0.5); background: rgba(190,18,60,0.1); color: var(--gp); }
+.gondola-chip.tipo-GS { border-color: rgba(194,65,12,0.5); background: rgba(194,65,12,0.1); color: var(--gs); }
 .gondola-chip.tipo-GB { border-color: rgba(14,165,183,0.55); background: rgba(14,165,183,0.12); color: var(--gb); }
 .gondola-chip.tipo-GC { border-color: rgba(217,119,6,0.55); background: rgba(217,119,6,0.1); color: var(--gc); }
+.gondola-chip.tipo-EC { border-color: rgba(146,64,14,0.55); background: rgba(146,64,14,0.12); color: var(--ec); }
 .gondola-chip.tipo-EX { border-color: rgba(161,98,7,0.55); background: rgba(161,98,7,0.1); color: var(--ex); }
 .gondola-chip.tipo-IC { border-color: rgba(2,132,168,0.55); background: rgba(2,132,168,0.12); color: var(--ic); }
 .gondola-chip.tipo-MH { border-color: rgba(22,163,74,0.55); background: rgba(22,163,74,0.1); color: var(--mh); }
 .gondola-chip.tipo-MM { border-color: rgba(202,138,4,0.55); background: rgba(202,138,4,0.12); color: var(--mm); }
+.gondola-chip.tipo-MS { border-color: rgba(234,88,12,0.55); background: rgba(234,88,12,0.12); color: var(--ms); }
+.gondola-chip.tipo-MQ { border-color: rgba(249,115,22,0.55); background: rgba(249,115,22,0.12); color: var(--mq); }
 .gondola-chip.parcial { border-style: dashed; opacity: 0.85; }
 
 /* Category list */
@@ -353,14 +371,19 @@ body {
 .gondola-card:hover { transform: translateY(-3px); }
 .gondola-card.tipo-GO { border-top-color: var(--go); }
 .gondola-card.tipo-BR { border-top-color: var(--br); }
+.gondola-card.tipo-BA { border-top-color: var(--ba); }
 .gondola-card.tipo-BP { border-top-color: var(--bp); }
 .gondola-card.tipo-GP { border-top-color: var(--gp); }
+.gondola-card.tipo-GS { border-top-color: var(--gs); }
 .gondola-card.tipo-GB { border-top-color: var(--gb); }
 .gondola-card.tipo-GC { border-top-color: var(--gc); }
+.gondola-card.tipo-EC { border-top-color: var(--ec); }
 .gondola-card.tipo-EX { border-top-color: var(--ex); }
 .gondola-card.tipo-IC { border-top-color: var(--ic); }
 .gondola-card.tipo-MH { border-top-color: var(--mh); }
 .gondola-card.tipo-MM { border-top-color: var(--mm); }
+.gondola-card.tipo-MS { border-top-color: var(--ms); }
+.gondola-card.tipo-MQ { border-top-color: var(--mq); }
 .gondola-card.active { border-color: var(--primary-bright); }
 .gondola-card .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; gap: 8px; }
 .gondola-card .head .title { font-family: var(--mono); font-size: 18px; font-weight: 700; }
@@ -625,8 +648,9 @@ body {
   margin-left: 6px;
 }
 .face-panel .face-cat { font-size: 13px; color: var(--on-variant); margin-bottom: 14px; }
-.module-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.module-table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 11px; }
 .module-table th {
+  white-space: nowrap;
   text-align: left;
   font-family: var(--mono);
   font-size: 10px;
@@ -868,11 +892,16 @@ body {
 }
 .help-swatch .sw.go { background: var(--go); }
 .help-swatch .sw.br { background: var(--br); }
+.help-swatch .sw.ba { background: var(--ba); }
 .help-swatch .sw.bp { background: var(--bp); }
 .help-swatch .sw.gp { background: var(--gp); }
+.help-swatch .sw.gs { background: var(--gs); }
 .help-swatch .sw.gb { background: var(--gb); }
 .help-swatch .sw.gc { background: var(--gc); }
+.help-swatch .sw.ec { background: var(--ec); }
 .help-swatch .sw.ex { background: var(--ex); }
+.help-swatch .sw.ic { background: var(--ic); }
+.help-swatch .sw.mh { background: var(--mh); }
 
 .help-table {
   width: 100%;

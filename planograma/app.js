@@ -29,7 +29,7 @@
     btnCloseHelp: document.getElementById("btnCloseHelp"),
   };
 
-  const typeOrder = ["GO", "GB", "BR", "BP", "GP", "IC", "MH", "MM", "GC", "EX"];
+  const typeOrder = ["GO", "GB", "BR", "BA", "BP", "GP", "GS", "MQ", "IC", "MH", "MM", "MS", "EC", "EX", "GC"];
 
   function statusOf(g) {
     if (g.preenchimento === "completo") return "ok";
@@ -49,7 +49,16 @@
     return DATA.gondolas.filter((g) => {
       if (state.filterTipo !== "ALL" && g.tipo !== state.filterTipo) return false;
       if (!q) return true;
-      const blob = [g.id, g.setor, g.categorias, g.tipoLabel, ...(g.faces || []).map((f) => f.categoria)]
+      const blob = [
+        g.id,
+        g.setor,
+        g.categorias,
+        g.tipoLabel,
+        ...(g.faces || []).flatMap((f) => [
+          f.categoria,
+          ...(f.modulos || []).map((m) => [m.categoria, m.especificacao, m.observacao].join(" ")),
+        ]),
+      ]
         .join(" ")
         .toLowerCase();
       return blob.includes(q);
@@ -64,11 +73,11 @@
     const items = [
       { label: "Módulos (totalizador)", value: t.modulos, hint: `${t.m13x40} × 1,30×0,40 + outros` },
       { label: "Prateleiras", value: t.prateleiras, hint: `GO detalhadas: ${goPrat}` },
-      { label: "Braços", value: t.bracos.toLocaleString("pt-BR"), hint: `${t.aparadores} aparadores · ${t.ganchos} ganchos` },
+      { label: "Braços", value: t.bracos.toLocaleString("pt-BR"), hint: `${t.aparadores || 0} anteparos · ${t.ganchos} ganchos` },
       {
         label: "Equipamentos",
         value: c.gondolas,
-        hint: `${c.go} GO · ${c.br} BR · ${c.bp} BP · ${c.gp || 0} GP · ${c.ic || 0} IC · ${c.mh || 0} MH · ${c.gb} GB`,
+        hint: `${c.go} GO · ${c.br} BR · ${c.ba || 0} BA · ${c.bp} BP · ${c.gp || 0} GP · ${c.ic || 0} IC · ${c.mh || 0} MH · ${c.ec || 0} EC`,
       },
     ];
     els.kpis.innerHTML = items
@@ -102,8 +111,8 @@
     const resumoRapido = [
       { txt: `${t.modulos || 0} módulos`, sub: "todas as medidas" },
       { txt: `${t.prateleiras || 0} prateleiras`, sub: "todas as medidas" },
-      { txt: `${(t.bracos || 0).toLocaleString("pt-BR")} braços`, sub: "35 cm + 40 cm" },
-      { txt: `${t.aparadores || 0} aparadores`, sub: "1,00 m + 1,30 m" },
+      { txt: `${(t.bracos || 0).toLocaleString("pt-BR")} braços`, sub: "35 + 40 + 60 cm" },
+      { txt: `${t.aparadores || 0} anteparos`, sub: `aramado · ${t.anteparoAcrilico || 0} acrílico` },
     ];
 
     els.pecasBoard.innerHTML = `
@@ -172,9 +181,14 @@
       Prateleira: ["prateleira", "prateleiras"],
       Braço: ["braço", "braços"],
       Barra: ["barra", "barras"],
-      "Gancho horizontal": ["gancho horizontal", "ganchos horizontais"],
+      "Gancho": ["gancho", "ganchos"],
       "Gancho vassoura": ["gancho vassoura", "ganchos vassoura"],
-      Aparador: ["aparador", "aparadores"],
+      "Anteparo aramado": ["anteparo aramado", "anteparos aramados"],
+      "Anteparo acrílico": ["anteparo acrílico", "anteparos acrílicos"],
+      "Cesto carvão": ["cesto carvão", "cestos carvão"],
+      "Divisor de cesto": ["divisor de cesto", "divisores de cesto"],
+      Cabeceira: ["cabeceira", "cabeceiras"],
+      "Porta etiqueta": ["porta etiqueta", "portas etiqueta"],
       Cesto: ["cesto", "cestos"],
     };
     const pair = map[nome] || [nome.toLowerCase(), nome.toLowerCase() + "s"];
@@ -198,11 +212,11 @@
     const zones = [
       { key: "go", title: "Mercearia · GO", items: byTipo("GO"), cols: 3 },
       { key: "gb", title: "Parede · GB", items: byTipo("GB"), cols: 1 },
-      { key: "br", title: "Bebidas · BR", items: byTipo("BR"), cols: 3 },
+      { key: "br", title: "Bebidas · BR / BA", items: [...byTipo("BR"), ...byTipo("BA")], cols: 3 },
       {
         key: "bp",
-        title: "Padaria · BP / GP",
-        items: [...byTipo("BP"), ...byTipo("GP")],
+        title: "Padaria · BP / GP / MQ / GS",
+        items: [...byTipo("BP"), ...byTipo("GP"), ...byTipo("MQ"), ...byTipo("GS")],
         cols: 4,
       },
       {
@@ -213,8 +227,8 @@
       },
       {
         key: "mh",
-        title: "Hortifruti · MH / MM / EX",
-        items: [...byTipo("MH"), ...byTipo("MM"), ...byTipo("EX"), ...byTipo("GC")],
+        title: "Hortifruti · MH / MM / MS / EX / EC",
+        items: [...byTipo("MH"), ...byTipo("MM"), ...byTipo("MS"), ...byTipo("EX"), ...byTipo("EC"), ...byTipo("GC")],
         cols: 4,
       },
     ];
@@ -277,10 +291,20 @@
   }
 
   function faceLabel(face, index) {
-    const raw = String(face.id || "");
-    const m = raw.match(/\.([A-Z])$/i) || raw.match(/([A-Z])$/i);
+    if (face && face.lado) return String(face.lado).toUpperCase();
+    const raw = String(face && face.id ? face.id : "");
+    const m = raw.match(/\.([ABPC])$/i);
     if (m) return m[1].toUpperCase();
-    return index === 0 ? "A" : index === 1 ? "B" : String(index + 1);
+    return index === 0 ? "única" : String(index + 1);
+  }
+
+  function bomOf(m) {
+    return m && m.bom ? m.bom : {};
+  }
+
+  function tdN(v) {
+    const n = Number(v) || 0;
+    return `<td class="mono">${n ? n : "—"}</td>`;
   }
 
   function modCellHtml(m) {
@@ -401,21 +425,38 @@
         const tag = faceLabel(face, idx);
         const rows = face.modulos
           .map((m) => {
+            const b = bomOf(m);
+            const dimTxt = [m.altura, m.largura || m.dim, m.profundidade].filter(Boolean).join(" × ") || m.dim || "—";
             return `<tr>
-              <td class="mono">${m.id}</td>
+              <td class="mono">${escapeHtml(m.id)}</td>
               <td>${escapeHtml((m.categoria || "—").slice(0, 80))}</td>
-              <td class="mono">${m.prateleiras}</td>
-              <td class="mono">${m.bracos}</td>
-              <td class="mono">${m.ganchos || 0}</td>
-              <td class="mono">${m.aparadores || 0}</td>
-              <td class="mono">${m.cestos || 0}</td>
-              <td>${m.sintetico ? '<span class="pill parcial">sintético</span>' : '<span class="pill completo">corte</span>'}</td>
+              <td class="mono">${escapeHtml(dimTxt)}</td>
+              ${tdN(m.prateleiras)}
+              ${tdN(b.bracos040)}
+              ${tdN(b.bracos035)}
+              ${tdN(b.bracos060)}
+              ${tdN(b.barra100)}
+              ${tdN(b.barras130)}
+              ${tdN(b.ganchos3530)}
+              ${tdN(b.ganchos3025)}
+              ${tdN(b.ganchos4035)}
+              ${tdN(b.ganchosVassoura)}
+              ${tdN(b.anteparoAramado)}
+              ${tdN(b.anteparoAcrilico)}
+              ${tdN(b.cestos100)}
+              ${tdN(b.cestos130)}
+              ${tdN(b.cestoVinhos)}
+              ${tdN(b.cestoCarvao)}
+              ${tdN(b.divisorCesto100)}
+              ${tdN(b.divisorCesto130)}
+              ${tdN(b.cabeceira)}
+              <td>${escapeHtml((m.observacao || m.especificacao || "—").slice(0, 90))}</td>
             </tr>`;
           })
           .join("");
         return `<section class="face-panel glass">
           <h3>Face ${tag} <span class="face-id-muted">${face.id}</span></h3>
-          <div class="face-cat">${escapeHtml(face.categoria || "—")} · linear: ${face.linear || "—"} · ${face.headerMods} módulos</div>
+          <div class="face-cat">${escapeHtml(face.categoria || "—")} · linear: ${escapeHtml(face.linear || "—")} · ${face.headerMods} módulos${face.tpMobiliario ? " · " + escapeHtml(face.tpMobiliario) : ""}</div>
           <div class="viz-face-strip">
             <div class="caption">Módulos desta face (lado ${tag} da mesma gôndola)</div>
             <div class="face-modules strip">${face.modulos.map(modCellHtml).join("")}</div>
@@ -424,7 +465,13 @@
             <table class="module-table">
               <thead>
                 <tr>
-                  <th>Módulo</th><th>Categoria</th><th>Prat.</th><th>Braços</th><th>Ganchos</th><th>Apar.</th><th>Cestos</th><th>Fonte</th>
+                  <th>Módulo</th><th>Categoria</th><th>Dimensão</th>
+                  <th>Prat.</th><th>Br 40</th><th>Br 35</th><th>Br 60</th>
+                  <th>Barra 1,00</th><th>Barra 1,30</th>
+                  <th>G 35×30</th><th>G 30×25</th><th>G 40×35</th><th>Vass.</th>
+                  <th>Ant. aram.</th><th>Ant. acr.</th>
+                  <th>Cesto 1,00</th><th>Cesto 1,30</th><th>Vinhos</th><th>Carvão</th>
+                  <th>Div. 1,00</th><th>Div. 1,30</th><th>Cab.</th><th>Observações</th>
                 </tr>
               </thead>
               <tbody>${rows}</tbody>
@@ -444,6 +491,8 @@
             <span>${g.totalMods} módulos</span>
             <span>${g.totalPrat} prateleiras</span>
             <span>${g.totalBracos} braços</span>
+            <span>${g.totalGanchos || 0} ganchos</span>
+            <span>${g.totalCestos || 0} cestos</span>
             <span>${g.faces.length} face(s)</span>
           </div>
         </div>

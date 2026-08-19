@@ -27,7 +27,7 @@
       <button data-nav="pecas"><span class="material-symbols-outlined">inventory_2</span> Peças</button>
     </nav>
     <div class="sidebar-foot">
-      FONTE: CORTE LOJA 18<br />
+      FONTE: LJ01 · EXCEL LOJA 18<br />
       REF: PLANOGRAM ANALYTICS
     </div>
   </aside>
@@ -44,13 +44,18 @@
           <option value="GO">GO — Mercearia</option>
           <option value="GB">GB — Perfumaria</option>
           <option value="BR">BR — Bebidas</option>
+          <option value="BA">BA — Parede bebidas</option>
           <option value="BP">BP — Pães</option>
           <option value="GP">GP — Padaria</option>
+          <option value="GS">GS — Expositor salgados</option>
+          <option value="MQ">MQ — Mesa quente</option>
           <option value="IC">IC — Ilhas congelados</option>
           <option value="MH">MH — Hortifruti</option>
           <option value="MM">MM — Pontos extras</option>
+          <option value="MS">MS — Mesa salgados</option>
           <option value="EX">EX — Expositor ovos</option>
-          <option value="GC">GC — Expositor carvão</option>
+          <option value="EC">EC — Expositor carvão</option>
+          <option value="GC">GC — Expositor carvão (legado)</option>
         </select>
         <input id="search" type="search" placeholder="Buscar gôndola, categoria…" />
         <button type="button" class="btn-help" id="btnHelp" title="Critérios de leitura" aria-label="Abrir critérios de leitura" aria-haspopup="dialog" aria-controls="helpModal">
@@ -86,12 +91,17 @@
               <span><i class="dot go"></i> GO</span>
               <span><i class="dot gb"></i> GB</span>
               <span><i class="dot br"></i> BR</span>
+              <span><i class="dot ba"></i> BA</span>
               <span><i class="dot bp"></i> BP</span>
               <span><i class="dot gp"></i> GP</span>
+              <span><i class="dot gs"></i> GS</span>
               <span><i class="dot ic"></i> IC</span>
               <span><i class="dot mh"></i> MH</span>
               <span><i class="dot mm"></i> MM</span>
+              <span><i class="dot ms"></i> MS</span>
+              <span><i class="dot mq"></i> MQ</span>
               <span><i class="dot ex"></i> EX</span>
+              <span><i class="dot ec"></i> EC</span>
               <span><i class="dot warn"></i> BOM parcial</span>
             </div>
           </div>
@@ -111,7 +121,7 @@
         <div class="section-title">
           <h2>Visão Panorâmica Gôndola a Gôndola</h2>
           <div class="legend">
-            <span><i class="dot ok"></i> Corte completo</span>
+            <span><i class="dot ok"></i> BOM completo</span>
             <span><i class="dot warn"></i> Sem prateleiras no BOM</span>
             <span class="legend-hint">Barra do topo = tipo · use ? para critérios</span>
           </div>
@@ -125,7 +135,7 @@
         <div class="section-title">
           <h2>Detalhe do Equipamento</h2>
           <div class="legend">
-            <span>Face A/B · módulos · prateleiras · braços</span>
+            <span>Face A/B/P/C · módulos · BOM completo (LJ01)</span>
           </div>
         </div>
         <div id="detailBody"></div>
@@ -154,11 +164,15 @@
           <div class="help-swatches">
             <div class="help-swatch"><i class="sw go"></i><span>GO · Mercearia</span></div>
             <div class="help-swatch"><i class="sw br"></i><span>BR · Bebidas</span></div>
+            <div class="help-swatch"><i class="sw ba"></i><span>BA · Parede bebidas</span></div>
             <div class="help-swatch"><i class="sw bp"></i><span>BP · Balcão Pães</span></div>
             <div class="help-swatch"><i class="sw gp"></i><span>GP · Gôndola Padaria</span></div>
+            <div class="help-swatch"><i class="sw gs"></i><span>GS · Salgados</span></div>
             <div class="help-swatch"><i class="sw gb"></i><span>GB · Parede</span></div>
-            <div class="help-swatch"><i class="sw ex"></i><span>EX · Expositor</span></div>
-            <div class="help-swatch"><i class="sw gc"></i><span>GC · Expositor</span></div>
+            <div class="help-swatch"><i class="sw ic"></i><span>IC · Ilhas</span></div>
+            <div class="help-swatch"><i class="sw mh"></i><span>MH · Hortifruti</span></div>
+            <div class="help-swatch"><i class="sw ex"></i><span>EX · Ovos</span></div>
+            <div class="help-swatch"><i class="sw ec"></i><span>EC · Carvão</span></div>
           </div>
         </section>
 
@@ -172,7 +186,7 @@
             <tbody>
               <tr>
                 <td><span class="badge ok">BOM OK</span></td>
-                <td>Corte completo</td>
+                <td>BOM completo no LJ01</td>
                 <td>Módulos com quantidade de prateleiras / braços informada</td>
               </tr>
               <tr>
@@ -183,7 +197,7 @@
               <tr>
                 <td><span class="badge alert">VAZIO</span></td>
                 <td>Sem preenchimento útil</td>
-                <td>Equipamento sem dados de corte utilizáveis</td>
+                <td>Equipamento sem dados de BOM utilizáveis no LJ01</td>
               </tr>
             </tbody>
           </table>
@@ -211,15 +225,15 @@
 
         <section class="help-block">
           <h3>4. Por que uns cards têm muitos blocos finos?</h3>
-          <p>A largura do card é fixa: quanto mais módulos na face, mais estreitos ficam os retângulos. Ex.: BR-05 com ~17 módulos parece “denso”; BR-07 com poucos módulos parece “largo”. Isso não muda o status — só a quantidade de módulos.</p>
+          <p>A largura do card é fixa: quanto mais módulos na face, mais estreitos ficam os retângulos. Ex.: BA-01 com 17 módulos parece “denso”; BR-01 com poucos módulos parece “largo”. Isso não muda o status — só a quantidade de módulos.</p>
         </section>
 
         <section class="help-block">
           <h3>5. Totais oficiais vs. detalhe por gôndola</h3>
           <ul>
-            <li><strong>KPI / Peças</strong> — totalizador da planilha (ex.: 822 prateleiras da loja).</li>
-            <li><strong>Card da gôndola</strong> — soma só do que veio no corte daquele endereço (GO costuma ter prat.; BR/BP frequentemente 0).</li>
-            <li>Pendência típica: completar BOM de BR/BP para o detalhe bater com o totalizador.</li>
+            <li><strong>KPI / Peças</strong> — soma das colunas de BOM do LJ01 (prateleiras, braços por profundidade, ganchos, anteparos, cestos…).</li>
+            <li><strong>Card da gôndola</strong> — soma só daquele endereço.</li>
+            <li>Fonte exclusiva: aba Mercadológico-LJ01 do Excel Loja 18. Cortes ignorado.</li>
           </ul>
         </section>
 
@@ -257,7 +271,7 @@
     </div>
   </div>
 
-  <script src="data.test.js?v=lj01-ic-mh-mm"></script>
-  <script src="app.js"></script>
+  <script src="data.test.js?v=lj01-bom35-20260819"></script>
+  <script src="app.js?v=lj01-bom35-20260819"></script>
 </body>
 </html>

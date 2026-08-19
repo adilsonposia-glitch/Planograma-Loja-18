@@ -216,11 +216,11 @@
     <!--
       Coordenadas alinhadas à planta 1ºPavto_Planograma (área de vendas):
       - Balcões principais na parede ESQUERDA (Padaria / Laticínio) + Açougue no topo
-      - Ilhas IC em duas colunas no alto-esquerda; GC-01 (carvão) junto ao açougue
-      - BP + GP-01 à esquerda (padaria)
+      - Ilhas IC em duas colunas no alto-esquerda; EC-01 (carvão) junto ao açougue
+      - BP + GP-01 + MQ-01 + GS-01 à esquerda (padaria / salgados)
       - GO-09 (topo) → GO-01 (base) no centro; GB à direita
-      - MM pontos extras entre GO e BR; BR inferior esquerdo
-      - MH hortifruti inferior centro (tamanhos diferenciados); EX-01 entrada
+      - MM pontos extras entre GO e BR; BR + BA (parede bebidas) inferior esquerdo
+      - MH hortifruti inferior centro (tamanhos diferenciados); MS mesas salgados; EX-01 entrada
       - Check-outs em coluna vertical à direita
       Fonte de dados do planograma: Excel Loja 18 / Mercadológico-LJ01 (Cortes ignorado)
     -->
@@ -236,7 +236,7 @@
           Tatiana Batista<br />
           Jefferson Portilho
         </p>
-        <a class="btn-entrada" href="index.html?v=analise">Entrada</a>
+        <a class="btn-entrada" href="index.html?v=lj01-bom35-20260819">Entrada</a>
       </aside>
       <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -275,10 +275,10 @@
           <rect class="unit" x="198" y="244" width="96" height="40" rx="4" fill="#9fd4ea" stroke="#0284a8" stroke-width="2"/><text class="lbl" x="246" y="264">IC-01</text>
         </g>
 
-        <!-- ===== GC-01 carvão — junto ao açougue ===== -->
-        <g id="gc" filter="url(#soft)">
+        <!-- ===== EC-01 carvão — junto ao açougue ===== -->
+        <g id="ec" filter="url(#soft)">
           <rect class="unit" x="460" y="52" width="72" height="32" rx="3" fill="#d6b89c" stroke="#92400e" stroke-width="2"/>
-          <text class="lbl lbl-sm" x="496" y="68">GC-01</text>
+          <text class="lbl lbl-sm" x="496" y="68">EC-01</text>
           <text class="zone-hint" x="496" y="92" text-anchor="middle">Carvão</text>
         </g>
 
@@ -288,8 +288,12 @@
           <rect class="unit" x="90" y="308" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="319">BP-01</text>
           <rect class="unit" x="90" y="334" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="345">BP-02</text>
           <rect class="unit" x="90" y="360" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="371">BP-03</text>
-          <rect class="unit" x="210" y="308" width="100" height="74" rx="3" fill="#bbf7d0" stroke="#047857" stroke-width="2"/>
-          <text class="lbl" x="260" y="345">GP-01</text>
+          <rect class="unit" x="210" y="308" width="100" height="50" rx="3" fill="#bbf7d0" stroke="#047857" stroke-width="2"/>
+          <text class="lbl" x="260" y="333">GP-01</text>
+          <rect class="unit" x="210" y="362" width="48" height="22" rx="2" fill="#fed7aa" stroke="#ea580c"/>
+          <text class="lbl lbl-sm" x="234" y="373">MQ-01</text>
+          <rect class="unit" x="262" y="362" width="48" height="22" rx="2" fill="#fdba74" stroke="#c2410c"/>
+          <text class="lbl lbl-sm" x="286" y="373">GS-01</text>
         </g>
 
         <!-- ===== GO — centro: GO-09 topo → GO-01 base ===== -->
@@ -323,17 +327,17 @@
           <rect class="unit" x="488" y="378" width="48" height="28" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.8"/><text class="lbl lbl-sm" x="512" y="392">MM-04</text>
         </g>
 
-        <!-- ===== BR — inferior esquerdo (bebidas) ===== -->
+        <!-- ===== BR + BA — inferior esquerdo (bebidas / parede) ===== -->
         <g id="br">
           <rect class="unit" x="40" y="420" width="18" height="90" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="49" y="465" transform="rotate(-90 49 465)">BR-09</text>
-          <rect class="unit" x="64" y="420" width="18" height="90" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="73" y="465" transform="rotate(-90 73 465)">BR-08</text>
-          <rect class="unit" x="96" y="418" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="426">BR-07</text>
-          <rect class="unit" x="96" y="438" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="446">BR-06</text>
-          <rect class="unit" x="96" y="458" width="250" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="221" y="466">BR-05</text>
-          <rect class="unit" x="96" y="478" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="486">BR-04</text>
-          <rect class="unit" x="96" y="498" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="196" y="506">BR-03</text>
-          <rect class="unit" x="96" y="518" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="186" y="526">BR-02</text>
-          <rect class="unit" x="96" y="538" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="186" y="546">BR-01</text>
+          <rect class="unit" x="64" y="418" width="250" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="189" y="426">BA-01</text>
+          <rect class="unit" x="64" y="438" width="90" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="109" y="446">BA-02</text>
+          <rect class="unit" x="158" y="438" width="70" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="193" y="446">BA-03</text>
+          <rect class="unit" x="232" y="438" width="82" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="273" y="446">BA-04</text>
+          <rect class="unit" x="64" y="458" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="164" y="466">BR-04</text>
+          <rect class="unit" x="64" y="478" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="164" y="486">BR-03</text>
+          <rect class="unit" x="64" y="498" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="154" y="506">BR-02</text>
+          <rect class="unit" x="64" y="518" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="154" y="526">BR-01</text>
         </g>
 
         <!-- ===== MH — hortifruti (inferior centro), tamanhos diferenciados ===== -->
@@ -351,6 +355,9 @@
           <rect class="unit" x="422" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="448" y="532">MH-03</text>
           <rect class="unit" x="484" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="510" y="532">MH-02</text>
           <rect class="unit" x="546" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="572" y="532">MH-01</text>
+          <rect class="unit" x="610" y="474" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="487">MS-01</text>
+          <rect class="unit" x="658" y="474" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="680" y="487">MS-02</text>
+          <rect class="unit" x="610" y="504" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="517">MS-03</text>
         </g>
 
         <!-- ===== CHECK-OUTS ===== -->
@@ -369,12 +376,15 @@
       <span><i class="sw" style="background:#9fd4ea"></i>IC ilhas</span>
       <span><i class="sw" style="background:#e7f6ee"></i>GO</span>
       <span><i class="sw" style="background:#fce7f0"></i>BR</span>
+      <span><i class="sw" style="background:#ede9fe"></i>BA parede</span>
       <span><i class="sw" style="background:#d8f0e4"></i>BP</span>
       <span><i class="sw" style="background:#bbf7d0"></i>GP</span>
+      <span><i class="sw" style="background:#fed7aa"></i>MQ / GS</span>
       <span><i class="sw" style="background:#d4eef7"></i>GB</span>
       <span><i class="sw" style="background:#e8f7e4"></i>MH</span>
       <span><i class="sw" style="background:#fde68a"></i>MM</span>
-      <span><i class="sw" style="background:#d6b89c"></i>GC carvão</span>
+      <span><i class="sw" style="background:#ffedd5"></i>MS</span>
+      <span><i class="sw" style="background:#d6b89c"></i>EC carvão</span>
       <span><i class="sw" style="background:#fef3c7"></i>EX</span>
       <span><i class="sw" style="background:#cfe6f2"></i>Balcões</span>
     </div>
