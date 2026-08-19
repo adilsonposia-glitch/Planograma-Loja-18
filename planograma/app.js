@@ -302,9 +302,58 @@
     return m && m.bom ? m.bom : {};
   }
 
-  function tdN(v) {
-    const n = Number(v) || 0;
-    return `<td class="mono">${n ? n : "—"}</td>`;
+  function numVal(v) {
+    return Number(v) || 0;
+  }
+
+  function textVal(v) {
+    const s = String(v || "").trim();
+    return s && s !== "—" ? s : "";
+  }
+
+  function dimOf(m) {
+    return [m.altura, m.largura, m.profundidade].filter(Boolean).join(" × ") || m.dim || "";
+  }
+
+  const BOM_COLS = [
+    { key: "dim", label: "Dimensão", kind: "text", get: (m) => dimOf(m) },
+    { key: "prat", label: "Prat.", kind: "num", get: (m) => m.prateleiras },
+    { key: "br40", label: "Br 40", kind: "num", get: (m) => bomOf(m).bracos040 },
+    { key: "br35", label: "Br 35", kind: "num", get: (m) => bomOf(m).bracos035 },
+    { key: "br60", label: "Br 60", kind: "num", get: (m) => bomOf(m).bracos060 },
+    { key: "bar100", label: "Barra 1,00", kind: "num", get: (m) => bomOf(m).barra100 },
+    { key: "bar130", label: "Barra 1,30", kind: "num", get: (m) => bomOf(m).barras130 },
+    { key: "g3530", label: "G 35×30", kind: "num", get: (m) => bomOf(m).ganchos3530 },
+    { key: "g3025", label: "G 30×25", kind: "num", get: (m) => bomOf(m).ganchos3025 },
+    { key: "g4035", label: "G 40×35", kind: "num", get: (m) => bomOf(m).ganchos4035 },
+    { key: "gvass", label: "Vass.", kind: "num", get: (m) => bomOf(m).ganchosVassoura },
+    { key: "antAr", label: "Ant. aram.", kind: "num", get: (m) => bomOf(m).anteparoAramado },
+    { key: "antAc", label: "Ant. acr.", kind: "num", get: (m) => bomOf(m).anteparoAcrilico },
+    { key: "ce100", label: "Cesto 1,00", kind: "num", get: (m) => bomOf(m).cestos100 },
+    { key: "ce130", label: "Cesto 1,30", kind: "num", get: (m) => bomOf(m).cestos130 },
+    { key: "vinhos", label: "Vinhos", kind: "num", get: (m) => bomOf(m).cestoVinhos },
+    { key: "carvao", label: "Carvão", kind: "num", get: (m) => bomOf(m).cestoCarvao },
+    { key: "div100", label: "Div. 1,00", kind: "num", get: (m) => bomOf(m).divisorCesto100 },
+    { key: "div130", label: "Div. 1,30", kind: "num", get: (m) => bomOf(m).divisorCesto130 },
+    { key: "cab", label: "Cab.", kind: "num", get: (m) => bomOf(m).cabeceira },
+    { key: "obs", label: "Observações", kind: "text", get: (m) => m.observacao || "" },
+  ];
+
+  function visibleBomCols(mods) {
+    const list = mods || [];
+    return BOM_COLS.filter((col) =>
+      list.some((m) => (col.kind === "num" ? numVal(col.get(m)) > 0 : Boolean(textVal(col.get(m)))))
+    );
+  }
+
+  function tdBom(col, m) {
+    const v = col.get(m);
+    if (col.kind === "num") {
+      const n = numVal(v);
+      return `<td class="mono">${n ? n : "—"}</td>`;
+    }
+    const t = textVal(v);
+    return `<td>${escapeHtml((t || "—").slice(0, 90))}</td>`;
   }
 
   function modCellHtml(m) {
@@ -423,35 +472,24 @@
     const facesHtml = g.faces
       .map((face, idx) => {
         const tag = faceLabel(face, idx);
-        const rows = face.modulos
+        const mods = face.modulos || [];
+        const cols = visibleBomCols(mods);
+        const headCells = cols.map((c) => `<th>${escapeHtml(c.label)}</th>`).join("");
+        const rows = mods
           .map((m) => {
-            const b = bomOf(m);
-            const dimTxt = [m.altura, m.largura || m.dim, m.profundidade].filter(Boolean).join(" × ") || m.dim || "—";
+            const cells = cols.map((c) => tdBom(c, m)).join("");
             return `<tr>
               <td class="mono">${escapeHtml(m.id)}</td>
               <td>${escapeHtml((m.categoria || "—").slice(0, 80))}</td>
-              <td class="mono">${escapeHtml(dimTxt)}</td>
-              ${tdN(m.prateleiras)}
-              ${tdN(b.bracos040)}
-              ${tdN(b.bracos035)}
-              ${tdN(b.bracos060)}
-              ${tdN(b.barra100)}
-              ${tdN(b.barras130)}
-              ${tdN(b.ganchos3530)}
-              ${tdN(b.ganchos3025)}
-              ${tdN(b.ganchos4035)}
-              ${tdN(b.ganchosVassoura)}
-              ${tdN(b.anteparoAramado)}
-              ${tdN(b.anteparoAcrilico)}
-              ${tdN(b.cestos100)}
-              ${tdN(b.cestos130)}
-              ${tdN(b.cestoVinhos)}
-              ${tdN(b.cestoCarvao)}
-              ${tdN(b.divisorCesto100)}
-              ${tdN(b.divisorCesto130)}
-              ${tdN(b.cabeceira)}
-              <td>${escapeHtml((m.observacao || m.especificacao || "—").slice(0, 90))}</td>
+              ${cells}
             </tr>`;
+          })
+          .join("");
+        const totalCells = cols
+          .map((c) => {
+            if (c.kind !== "num") return "<td></td>";
+            const tot = mods.reduce((a, m) => a + numVal(c.get(m)), 0);
+            return `<td class="mono">${tot ? tot.toLocaleString("pt-BR") : "—"}</td>`;
           })
           .join("");
         return `<section class="face-panel glass">
@@ -459,22 +497,22 @@
           <div class="face-cat">${escapeHtml(face.categoria || "—")} · linear: ${escapeHtml(face.linear || "—")} · ${face.headerMods} módulos${face.tpMobiliario ? " · " + escapeHtml(face.tpMobiliario) : ""}</div>
           <div class="viz-face-strip">
             <div class="caption">Módulos desta face (lado ${tag} da mesma gôndola)</div>
-            <div class="face-modules strip">${face.modulos.map(modCellHtml).join("")}</div>
+            <div class="face-modules strip">${mods.map(modCellHtml).join("")}</div>
           </div>
           <div style="overflow:auto;margin-top:14px">
             <table class="module-table">
               <thead>
                 <tr>
-                  <th>Módulo</th><th>Categoria</th><th>Dimensão</th>
-                  <th>Prat.</th><th>Br 40</th><th>Br 35</th><th>Br 60</th>
-                  <th>Barra 1,00</th><th>Barra 1,30</th>
-                  <th>G 35×30</th><th>G 30×25</th><th>G 40×35</th><th>Vass.</th>
-                  <th>Ant. aram.</th><th>Ant. acr.</th>
-                  <th>Cesto 1,00</th><th>Cesto 1,30</th><th>Vinhos</th><th>Carvão</th>
-                  <th>Div. 1,00</th><th>Div. 1,30</th><th>Cab.</th><th>Observações</th>
+                  <th>Módulo</th><th>Categoria</th>${headCells}
                 </tr>
               </thead>
               <tbody>${rows}</tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2">Total da face</td>
+                  ${totalCells}
+                </tr>
+              </tfoot>
             </table>
           </div>
         </section>`;
