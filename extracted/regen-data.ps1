@@ -37,6 +37,7 @@ function NormBase($x) {
     '^1,00x1,00' { return '1,00x1,00' }
     '^1,20x1,20' { return '1,20x1,20' }
     '^2,00x1,00' { return '2,00x1,00' }
+    '^3,00x1,20' { return '3,00x1,20' }
     '^5,00x2,00' { return '5,00x2,00' }
     default { return $d }
   }
@@ -50,9 +51,11 @@ $csvPath = Join-Path $outDir 'sheet_Mercadologico-LJ01.csv'
 if ($csvPath -match '(?i)corte') { throw 'Caminho CSV invalido (Cortes).' }
 
 if (-not $skipExport) {
-  $xlsx = Get-ChildItem -Filter '*.xlsx' | Where-Object { $_.Name -match '(?i)loja\s*18|planograma|layout' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-  if (-not $xlsx) { $xlsx = Get-ChildItem -Filter '*.xlsx' | Sort-Object LastWriteTime -Descending | Select-Object -First 1 }
-  if (-not $xlsx) { throw 'Nenhum .xlsx Loja 18 encontrado na pasta do projeto.' }
+  $xlsx = Get-ChildItem -Filter '*.xlsx' | Where-Object { $_.Name -match '^09-09-26' } | Select-Object -First 1
+  if (-not $xlsx) {
+    $xlsx = Get-ChildItem -Filter '*.xlsx' | Where-Object { $_.Name -match '(?i)09-09-26.*(loja\s*18|layout)' } | Select-Object -First 1
+  }
+  if (-not $xlsx) { throw 'Excel 09-09-26 (Loja 18) nao encontrado na pasta do projeto.' }
   if ($xlsx.Name -match '(?i)^cortes?') { throw "Recusado workbook de Cortes: $($xlsx.Name)" }
   Write-Host "XLSX: $($xlsx.FullName)  ($($xlsx.LastWriteTime))"
 
@@ -264,6 +267,7 @@ for ($i = 1; $i -lt $lines.Count; $i++) {
   $setor = Cell $p $col.setor
   $endCompleto = Cell $p $col.endCompleto
   $endGondola = Cell $p $col.endGondola
+  if (-not $endCompleto -and -not $endGondola) { continue }
   $lado = (Cell $p $col.lado).ToUpperInvariant()
   $modNraw = Cell $p $col.modN
   $base = Cell $p $col.base
@@ -485,6 +489,7 @@ $m13x60  = DimQ '1,30x0,60'
 $m100x100 = DimQ '1,00x1,00'
 $m120x120 = DimQ '1,20x1,20'
 $m200x100 = DimQ '2,00x1,00'
+$m300x120 = DimQ '3,00x1,20'
 $m500x200 = DimQ '5,00x2,00'
 
 $p100x35 = PratQ '1,00x0,35'
@@ -511,6 +516,7 @@ $pecas = @(
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,00 × 1,00 m'; qtd = $m100x100; unidade = 'un' }
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '1,20 × 1,20 m'; qtd = $m120x120; unidade = 'un' }
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '2,00 × 1,00 m'; qtd = $m200x100; unidade = 'un' }
+  @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '3,00 × 1,20 m'; qtd = $m300x120; unidade = 'un' }
   @{ grupo = 'Módulos'; peca = 'Módulo'; tamanho = '5,00 × 2,00 m'; qtd = $m500x200; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,00 × 0,35 m'; qtd = $m100x35; unidade = 'un' }
   @{ grupo = 'Bases'; peca = 'Base'; tamanho = '1,00 × 0,40 m'; qtd = $m100x40; unidade = 'un' }
@@ -548,7 +554,7 @@ $colunasNome = @($hdr | ForEach-Object { $_.Trim() } | Where-Object { $_ })
 $summary = @{
   loja = 'Loja 18 — Supermarket Santa Cruz'
   pavimento = '1º Pavimento'
-  fonte = 'Mercadológico-LJ01 — Excel Loja 18 (Cortes ignorado)'
+  fonte = 'Mercadológico-LJ01 — Excel 09-09-26 Loja 18 (Cortes ignorado)'
   colunas = $colunasNome
   totalizador = @{
     modulos = [int]$modulosTot
@@ -574,6 +580,7 @@ $summary = @{
         @{ qtd = $m100x100; tamanho = '1,00x1,00' }
         @{ qtd = $m120x120; tamanho = '1,20x1,20' }
         @{ qtd = $m200x100; tamanho = '2,00x1,00' }
+        @{ qtd = $m300x120; tamanho = '3,00x1,20' }
         @{ qtd = $m500x200; tamanho = '5,00x2,00' }
       )
       prateleiras = @(

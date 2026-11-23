@@ -217,12 +217,12 @@
       Coordenadas alinhadas à planta 1ºPavto_Planograma (área de vendas):
       - Balcões principais na parede ESQUERDA (Padaria / Laticínio) + Açougue no topo
       - Ilhas IC em duas colunas no alto-esquerda; EC-01 (carvão) junto ao açougue
-      - BP + GP-01 + MQ-01 + GS-01 à esquerda (padaria / salgados)
+      - BP + GP-01/02/03 + MQ-01 + GS-01 à esquerda (padaria / salgados)
       - GO-09 (topo) → GO-01 (base) no centro; GB à direita
-      - MM pontos extras entre GO e BR; BR + BA (parede bebidas) inferior esquerdo
-      - MH hortifruti inferior centro (tamanhos diferenciados); MS mesas salgados; EX-01 entrada
+      - MM pontos extras entre GO e BR; BR-01/02/05 + BA (parede bebidas) inferior esquerdo
+      - MH-01…12 hortifruti inferior centro; MS mesas salgados; EX-01 entrada
       - Check-outs em coluna vertical à direita
-      Fonte de dados do planograma: Excel Loja 18 / Mercadológico-LJ01 (Cortes ignorado)
+      Fonte: Excel 09-09-26 / Mercadológico-LJ01 (Cortes ignorado)
     -->
     <div class="plan-wrap">
       <aside class="intro-panel">
@@ -236,7 +236,7 @@
           Tatiana Batista<br />
           Jefferson Portilho
         </p>
-        <a class="btn-entrada" href="index.html?v=lj01-bom35-20260819">Entrada</a>
+        <a class="btn-entrada" href="index.html?v=lj01-0909-26">Entrada</a>
       </aside>
       <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -288,8 +288,12 @@
           <rect class="unit" x="90" y="308" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="319">BP-01</text>
           <rect class="unit" x="90" y="334" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="345">BP-02</text>
           <rect class="unit" x="90" y="360" width="110" height="22" rx="2" fill="#d8f0e4" stroke="#059669"/><text class="lbl lbl-sm" x="145" y="371">BP-03</text>
-          <rect class="unit" x="210" y="308" width="100" height="50" rx="3" fill="#bbf7d0" stroke="#047857" stroke-width="2"/>
-          <text class="lbl" x="260" y="333">GP-01</text>
+          <rect class="unit" x="210" y="308" width="52" height="50" rx="3" fill="#bbf7d0" stroke="#047857" stroke-width="2"/>
+          <text class="lbl lbl-sm" x="236" y="333">GP-01</text>
+          <rect class="unit" x="266" y="308" width="44" height="24" rx="2" fill="#bbf7d0" stroke="#047857"/>
+          <text class="lbl lbl-sm" x="288" y="320">GP-02</text>
+          <rect class="unit" x="266" y="334" width="44" height="24" rx="2" fill="#86efac" stroke="#047857"/>
+          <text class="lbl lbl-sm" x="288" y="346">GP-03</text>
           <rect class="unit" x="210" y="362" width="48" height="22" rx="2" fill="#fed7aa" stroke="#ea580c"/>
           <text class="lbl lbl-sm" x="234" y="373">MQ-01</text>
           <rect class="unit" x="262" y="362" width="48" height="22" rx="2" fill="#fdba74" stroke="#c2410c"/>
@@ -309,13 +313,13 @@
           <rect class="unit" x="340" y="334" width="300" height="20" rx="2" fill="#e7f6ee" stroke="#0d9488"/><text class="lbl lbl-sm" x="490" y="344">GO-01</text>
         </g>
 
-        <!-- ===== GB — à direita do GO ===== -->
+        <!-- ===== GB — à direita do GO (GB-01/02: 4+4 mód.; GB-03/04: 3+3) ===== -->
         <g id="gb">
-          <rect x="660" y="230" width="130" height="130" rx="4" fill="none" stroke="#0284a8" stroke-width="2" stroke-dasharray="4 3"/>
-          <rect class="unit" x="674" y="242" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="253">GB-04</text>
-          <rect class="unit" x="674" y="270" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="281">GB-03</text>
-          <rect class="unit" x="674" y="298" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="309">GB-02</text>
-          <rect class="unit" x="674" y="326" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="337">GB-01</text>
+          <rect x="660" y="218" width="130" height="148" rx="4" fill="none" stroke="#0284a8" stroke-width="2" stroke-dasharray="4 3"/>
+          <rect class="unit" x="674" y="226" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="237">GB-04</text>
+          <rect class="unit" x="674" y="252" width="102" height="22" rx="2" fill="#d4eef7" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="263">GB-03</text>
+          <rect class="unit" x="674" y="278" width="102" height="28" rx="2" fill="#bae6fd" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="292">GB-02</text>
+          <rect class="unit" x="674" y="310" width="102" height="28" rx="2" fill="#bae6fd" stroke="#0284a8"/><text class="lbl lbl-sm" x="725" y="324">GB-01</text>
         </g>
 
         <!-- ===== MM — pontos extras (entre GO e BR) ===== -->
@@ -327,37 +331,35 @@
           <rect class="unit" x="488" y="378" width="48" height="28" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.8"/><text class="lbl lbl-sm" x="512" y="392">MM-04</text>
         </g>
 
-        <!-- ===== BR + BA — inferior esquerdo (bebidas / parede) ===== -->
+        <!-- ===== BR + BA — inferior esquerdo (bebidas / parede) — LJ01 09-09-26 ===== -->
         <g id="br">
-          <rect class="unit" x="40" y="420" width="18" height="90" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="49" y="465" transform="rotate(-90 49 465)">BR-09</text>
-          <rect class="unit" x="64" y="418" width="250" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="189" y="426">BA-01</text>
-          <rect class="unit" x="64" y="438" width="90" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="109" y="446">BA-02</text>
-          <rect class="unit" x="158" y="438" width="70" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="193" y="446">BA-03</text>
-          <rect class="unit" x="232" y="438" width="82" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="273" y="446">BA-04</text>
-          <rect class="unit" x="64" y="458" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="164" y="466">BR-04</text>
-          <rect class="unit" x="64" y="478" width="200" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="164" y="486">BR-03</text>
-          <rect class="unit" x="64" y="498" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="154" y="506">BR-02</text>
-          <rect class="unit" x="64" y="518" width="180" height="16" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="154" y="526">BR-01</text>
+          <rect class="unit" x="40" y="418" width="274" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="177" y="426">BA-01</text>
+          <rect class="unit" x="40" y="438" width="90" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="85" y="446">BA-02</text>
+          <rect class="unit" x="134" y="438" width="70" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="169" y="446">BA-03</text>
+          <rect class="unit" x="208" y="438" width="106" height="16" rx="2" fill="#ede9fe" stroke="#7c3aed"/><text class="lbl lbl-sm" x="261" y="446">BA-04</text>
+          <rect class="unit" x="40" y="458" width="240" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="160" y="467">BR-02</text>
+          <rect class="unit" x="40" y="480" width="240" height="18" rx="2" fill="#fce7f0" stroke="#e11d48"/><text class="lbl lbl-sm" x="160" y="489">BR-01</text>
+          <rect class="unit" x="40" y="502" width="140" height="18" rx="2" fill="#fbcfe8" stroke="#be185d"/><text class="lbl lbl-sm" x="110" y="511">BR-05</text>
         </g>
 
-        <!-- ===== MH — hortifruti (inferior centro), tamanhos diferenciados ===== -->
+        <!-- ===== MH — hortifruti (inferior centro) — 12 mesas, MH-05/06 3,00×1,20 ===== -->
         <g id="mh" filter="url(#soft)">
           <text class="zone-hint" x="360" y="420">Hortifruti</text>
-          <!-- grandes MH-05 / MH-06 -->
-          <rect class="unit" x="360" y="428" width="160" height="36" rx="3" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/><text class="lbl lbl-sm" x="440" y="446">MH-05</text>
-          <rect class="unit" x="530" y="428" width="160" height="36" rx="3" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/><text class="lbl lbl-sm" x="610" y="446">MH-06</text>
-          <!-- média MH-07 -->
-          <rect class="unit" x="360" y="474" width="100" height="32" rx="3" fill="#dcfce7" stroke="#16a34a"/><text class="lbl lbl-sm" x="410" y="490">MH-07</text>
-          <!-- pequenas -->
-          <rect class="unit" x="470" y="474" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="496" y="490">MH-08</text>
-          <rect class="unit" x="532" y="474" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="558" y="490">MH-09</text>
-          <rect class="unit" x="360" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="386" y="532">MH-04</text>
-          <rect class="unit" x="422" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="448" y="532">MH-03</text>
-          <rect class="unit" x="484" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="510" y="532">MH-02</text>
-          <rect class="unit" x="546" y="516" width="52" height="32" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="572" y="532">MH-01</text>
-          <rect class="unit" x="610" y="474" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="487">MS-01</text>
-          <rect class="unit" x="658" y="474" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="680" y="487">MS-02</text>
-          <rect class="unit" x="610" y="504" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="517">MS-03</text>
+          <rect class="unit" x="360" y="428" width="118" height="32" rx="3" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/><text class="lbl lbl-sm" x="419" y="444">MH-05</text>
+          <rect class="unit" x="484" y="428" width="118" height="32" rx="3" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/><text class="lbl lbl-sm" x="543" y="444">MH-06</text>
+          <rect class="unit" x="360" y="466" width="52" height="28" rx="3" fill="#dcfce7" stroke="#16a34a"/><text class="lbl lbl-sm" x="386" y="480">MH-07</text>
+          <rect class="unit" x="416" y="466" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="442" y="480">MH-08</text>
+          <rect class="unit" x="472" y="466" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="498" y="480">MH-09</text>
+          <rect class="unit" x="528" y="466" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="554" y="480">MH-10</text>
+          <rect class="unit" x="360" y="500" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="386" y="514">MH-11</text>
+          <rect class="unit" x="416" y="500" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="442" y="514">MH-12</text>
+          <rect class="unit" x="472" y="500" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="498" y="514">MH-04</text>
+          <rect class="unit" x="528" y="500" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="554" y="514">MH-03</text>
+          <rect class="unit" x="360" y="534" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="386" y="548">MH-02</text>
+          <rect class="unit" x="416" y="534" width="52" height="28" rx="3" fill="#e8f7e4" stroke="#16a34a"/><text class="lbl lbl-sm" x="442" y="548">MH-01</text>
+          <rect class="unit" x="610" y="428" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="440">MS-01</text>
+          <rect class="unit" x="658" y="428" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="680" y="440">MS-02</text>
+          <rect class="unit" x="610" y="458" width="44" height="24" rx="3" fill="#ffedd5" stroke="#ea580c"/><text class="lbl lbl-sm" x="632" y="470">MS-03</text>
         </g>
 
         <!-- ===== CHECK-OUTS ===== -->
