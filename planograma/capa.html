@@ -97,6 +97,32 @@
       box-shadow: 0 10px 28px rgba(2, 132, 168, 0.28);
     }
     .btn-entrada:hover { filter: brightness(1.05); }
+    .btn-row {
+      margin-top: 12px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+    .btn-row .btn-entrada { margin-top: 0; }
+    .btn-briefing {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      border: 1px solid #0b6f8c;
+      background: #fff;
+      color: #0b6f8c;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .btn-briefing:hover { background: #e7f4fa; }
     .top-bar {
       position: absolute;
       top: 0;
@@ -229,14 +255,17 @@
         <h2>Proposta Detalhada do Planograma — Loja 18 (Santa Cruz)</h2>
         <p>Este material apresenta a análise detalhada do planograma, gôndola a gôndola e módulo a módulo.</p>
         <p>Sua avaliação é fundamental: críticas e sugestões podem contribuir para a redução de despesas na aquisição e confecção de mobiliário, além de ajudar a evitar excessos ou rupturas de estoque.</p>
-        <p>Acesse o plano completo no botão abaixo.</p>
+        <p>Acesse o plano completo ou o briefing 3D para a Aço Móveis nos botões abaixo.</p>
         <p>Bom trabalho!</p>
         <p class="participacao">
           <strong>Participação:</strong>
           Tatiana Batista<br />
           Jefferson Portilho
         </p>
-        <a class="btn-entrada" href="index.html?v=lj01-0909-26">Entrada</a>
+        <div class="btn-row">
+          <a class="btn-entrada" href="index.html?v=lj01-0909-26">Entrada</a>
+          <a class="btn-briefing" href="briefing.html?v=lj01-0909-26">Briefing 3D</a>
+        </div>
       </aside>
       <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
         <defs>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Briefing 3D — Loja 18 · Aço Móveis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #123047;
+      --muted: #4d6880;
+      --teal: #0b6f8c;
+      --line: rgba(18, 60, 95, 0.12);
+      --ok: #047857;
+      --bad: #be185d;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #eef6fb; color: var(--ink); font-family: Geist, "Segoe UI", sans-serif; }
+    .bar {
+      position: sticky; top: 0; z-index: 4;
+      display: flex; gap: 10px; align-items: center; justify-content: space-between;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar strong { color: var(--teal); }
+    .bar nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .bar a, .bar button {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 8px 14px; border-radius: 8px; text-decoration: none;
+      font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--line);
+      background: #fff; color: var(--teal);
+    }
+    .bar a.primary { background: linear-gradient(165deg, #0b6f8c, #0284a8); color: #fff; border: 0; }
+    main { max-width: 920px; margin: 0 auto; padding: 28px 20px 64px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .lede { color: var(--muted); margin: 0 0 24px; line-height: 1.5; }
+    h2 { margin: 28px 0 12px; font-size: 18px; color: var(--teal); }
+    h3 { margin: 18px 0 8px; font-size: 15px; }
+    p, li { line-height: 1.55; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; }
+    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #e7f4fa; }
+    .ok { color: var(--ok); font-weight: 600; }
+    .bad { color: var(--bad); font-weight: 600; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin: 12px 0; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+    .gallery figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .gallery img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .gallery figcaption { padding: 8px 10px 10px; font-size: 12px; color: var(--muted); }
+    .meta { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; color: var(--muted); }
+    @media print {
+      .bar { display: none; }
+      body { background: #fff; }
+      main { padding-top: 0; }
+      .gallery img { height: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <strong>Briefing 3D · Loja 18</strong>
+    <nav>
+      <a href="capa.html?v=lj01-0909-26">Capa</a>
+      <a href="index.html?v=lj01-0909-26">Análise</a>
+      <button type="button" onclick="window.print()">Imprimir / PDF</button>
+      <a class="primary" href="capa.html?v=lj01-0909-26">Voltar</a>
+    </nav>
+  </header>
+  <main>
+    <p class="meta">Destinatário: Aço Móveis · Fonte: Excel 09-09-26 · Mercadológico-LJ01 · Cortes ignorado</p>
+    <h1>Adequar o vídeo 3D ao planograma proposto</h1>
+    <p class="lede">O overlay “imagens meramente ilustrativas” permanece, mas não cobre os itens abaixo. Depois da correção, o 3D deve representar o LJ01 09-09-26 (capa com 57 equipamentos e 16 check-outs). Vídeo analisado: SPK_28_VIDEO_01_LR.mp4 (~1 min 59 s).</p>
+
+    <h2>Punch list obrigatória</h2>
+    <div class="card">
+      <h3>1. Cestos de vinho — não modelar</h3>
+      <p>No 09-09 a coluna Cesto vinhos está zerada. Bebidas: <strong>BR-01</strong> e <strong>BR-02</strong> (8+8 módulos), <strong>BR-05</strong> (4+4, UHT). Alcoólicos na parede <strong>BA-03</strong>, sem cesto. Não desenhar BR-03 nem BR-04.</p>
+    </div>
+    <div class="card">
+      <h3>2. PDVs — 16 check-outs</h3>
+      <p>O vídeo mostra cerca de 8–11 caixas. A capa tem <strong>16</strong> em coluna à direita. Os 7–8 intercalados do comercial não entram.</p>
+    </div>
+    <div class="card">
+      <h3>3. Perfumaria (GB) 1,50 m</h3>
+      <p>GB-01 e GB-02: <strong>4 módulos por face</strong>. GB-03 e GB-04: 3+3. Base 1,00 × 0,35, prateleira slim. No vídeo as ilhas de COSMÉTICOS parecem GO de 1,85 m.</p>
+    </div>
+    <div class="card">
+      <h3>4. BR — três corpos a 1,50 × 1,30 × 0,40</h3>
+      <p>BR-01, BR-02 e BR-05. Não parecer GO/BA de 1,85 m. Não desenhar BR-03, BR-04, BR-06…08 nem BR-09.</p>
+    </div>
+    <div class="card">
+      <h3>5. Ilhas IC — 8 corpos</h3>
+      <p>Esquerda: IC-08 (4), IC-06 (12), IC-05 (12), IC-04 (12). Direita: IC-07 (8), IC-03 (8), IC-02 (8), IC-01 (8). Junto ao açougue.</p>
+    </div>
+    <div class="card">
+      <h3>6. EC-01 carvão</h3>
+      <p>1 módulo parede junto ao açougue, cesto qtd 5, ~1,85 m. O mural de churrasco não substitui o expositor. Não usar GC-01.</p>
+    </div>
+    <div class="card">
+      <h3>7. Hortifruti — 12 mesas</h3>
+      <p>MH-01…12. MH-05 e MH-06 = 3,00 × 1,20 (2 módulos). O vídeo mostra só 2 mesas grandes.</p>
+    </div>
+    <div class="card">
+      <h3>8. Padaria e parede de bebidas</h3>
+      <p>GP-01/02/03 + BP-01…03 + MQ-01 + GS-01. BA-01 (17 mód., 1,85 × 1,30 × 0,60), BA-02 (6), BA-03 alcoólicos (3), BA-04 leite UHT (5, endereço de parede).</p>
+    </div>
+
+    <h2>Frames do vídeo vs. 09-09</h2>
+    <div class="gallery">
+      <figure>
+        <img src="../extracted/spk28_frames/frame_00_004.7s.jpg" alt="PDVs no vídeo" />
+        <figcaption>4,7 s — PDVs (Caixa 4–7). <span class="bad">Menos de 16</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../extracted/spk28_frames/frame_04_044.4s.jpg" alt="Cosméticos no vídeo" />
+        <figcaption>44 s — COSMÉTICOS com cara de GO. <span class="bad">GB 1,50 m / 4+4</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../extracted/spk28_frames/frame_06_064.3s.jpg" alt="Ilhas de congelados" />
+        <figcaption>64 s — baús genéricos. <span class="bad">8 ilhas IC</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../extracted/spk28_frames/frame_08_084.1s.jpg" alt="Corredor de vinhos" />
+        <figcaption>84 s — VINHOS em ilha alta. <span class="ok">Sem cesto</span> · BR 1,50 m</figcaption>
+      </figure>
+      <figure>
+        <img src="../extracted/spk28_frames/frame_09_094.0s.jpg" alt="Hortifruti" />
+        <figcaption>94 s — 2 mesas grandes. <span class="bad">MH-01…12</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../extracted/spk28_frames/frame_03_034.5s.jpg" alt="Mural de carvão" />
+        <figcaption>34 s — mural, sem expositor. <span class="bad">Falta EC-01</span></figcaption>
+      </figure>
+    </div>
+
+    <h2>Tabela completa</h2>
+    <table>
+      <thead>
+        <tr><th>Tempo</th><th>Vídeo</th><th>LJ01 09-09</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>4,7 s</td><td>Fileira de PDVs; placas 4–7</td><td class="bad">16 check-outs</td></tr>
+        <tr><td>14–25 s</td><td>Caixa 1 e 7</td><td>Conferir numeração 01–16</td></tr>
+        <tr><td>34–44 s</td><td>COSMÉTICOS 4 níveis</td><td class="bad">GB 1,50 m; GB-01/02 4+4</td></tr>
+        <tr><td>34 s</td><td>Mural de churrasco</td><td class="bad">Incluir EC-01</td></tr>
+        <tr><td>54 s</td><td>4 cubos de ponto extra</td><td class="ok">OK (MM-01…04)</td></tr>
+        <tr><td>64 s</td><td>4–5 baús em linha</td><td class="bad">8 corpos IC 4/8/12</td></tr>
+        <tr><td>74 s</td><td>Padaria</td><td>GP-01/02/03 + BP + MQ + GS</td></tr>
+        <tr><td>84 s</td><td>VINHOS ilha alta, prateleira lisa</td><td>Sem cesto; alcoólicos em BA-03; BR 1,50 m</td></tr>
+        <tr><td>94 s</td><td>2 mesas grandes</td><td class="bad">12 mesas MH; 05/06 = 3,00×1,20</td></tr>
+        <tr><td>104 s</td><td>Caixa 9–11</td><td class="bad">Ainda não são 16</td></tr>
+      </tbody>
+    </table>
+    <p class="lede" style="margin-top:24px">Fora de escopo: Word comercial além do que já entrou no 09-09 (BR-05 de volta, GB-01/02 com +1 módulo, vinho sem cesto).</p>
+  </main>
+</body>
+</html>
